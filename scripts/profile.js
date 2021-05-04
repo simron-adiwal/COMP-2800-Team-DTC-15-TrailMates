@@ -1,6 +1,6 @@
 /* 
  * profile.js
  *  
- * JavaScript 
+ * JavaScript file containing scripts for editing the profile page
  * 
-*/ 
+*/
