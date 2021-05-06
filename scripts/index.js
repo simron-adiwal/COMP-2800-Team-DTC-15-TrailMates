@@ -10,7 +10,7 @@ function openClose() {
       document.getElementById("mySidenav").style.width = "250px";
       break;
   }
-};
+}
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
