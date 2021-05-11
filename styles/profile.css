@@ -1,0 +1,40 @@
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: row;
+    background-color: deeppink;
+}
+
+.profileInfo {
+
+}
+
+.utility {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    background-color: limegreen;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    background-color: deepskyblue;
+}
+
+.bio {
+    display: flex;
+    background-color: chocolate;
+}
+
+.profileImages {
+    display: flex;
+    flex-direction: row;
+    background-color: purple;
+}
