@@ -91,10 +91,21 @@ width: 100%;
 
 .bio {
     display: flex;
-    padding: 10px;
+    padding: 2vw 10vw 0.5vw 10vw;
 }
 
 .profileImages {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 40vw);
+    justify-content: center;
+    grid-gap: 2vw;
+padding-top: 2vw;
 }
+
+.profileImages img {
+    width: 40vw;
+    object-fit: cover;
+    height: 40vw;
+}
+
+
