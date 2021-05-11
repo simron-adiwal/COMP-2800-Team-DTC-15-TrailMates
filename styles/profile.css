@@ -1,13 +1,24 @@
+
 main {
     display: flex;
     flex-direction: column;
-    background-color: red;
 }
+
+/* Remove this */
+/* vvvvvvvvvvv */
+div {
+    border: black solid;
+}
+/* ^^^^^^^^^^^ */
+/* Remove this */
+
 
 .profileInfo {
     display: flex;
     flex-direction: row;
-    background-color: deeppink;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 .profileInfo .imageName {
@@ -56,7 +67,8 @@ width: 100%;
     display: flex;
     flex-direction: row;
     align-content: center;
-    background-color: limegreen;
+    justify-content: center;
+    text-align: center;
 }
 
 .tags {
@@ -64,11 +76,9 @@ width: 100%;
     flex-direction: row;
     align-content: center;
     justify-content: center;
-    background-color: deepskyblue;
     padding: 10px;
     flex-wrap: wrap;
 }
-
 
 .tags .tagCard {
     text-align: center;
@@ -81,12 +91,10 @@ width: 100%;
 
 .bio {
     display: flex;
-    background-color: chocolate;
     padding: 10px;
 }
 
 .profileImages {
-    display: flex;
-    flex-direction: row;
-    background-color: purple;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
