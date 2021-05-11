@@ -12,17 +12,20 @@
 </head>
 
 <!-- Bootstrap Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 <!-- our scripts -->
 <script src="scripts/index.js"></script>
+<script src="scripts/hikedetail.js"></script>
 <link rel="stylesheet" href="./styles/custom.css">
 <link rel="stylesheet" href="./styles/hikedetail.css">
-
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
 
 <body>
     <!-- Side Nav -->
@@ -44,7 +47,7 @@
 
 
 
-    <h1 id="hike-title-heading">Garibaldi Lake</h1>
+    <h1 id="hike-title-heading"></h1>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -54,17 +57,19 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/GaribaldiLake-PanoramaRidge.jpg"
-                    class="d-block w-100 carousel-img" alt="View of Garibaldi Lake">
+                <!-- <img src="https://firebasestorage.googleapis.com/v0/b/trailmates-657f0.appspot.com/o/Garibaldi%2FGaribaldi%2FGaribaldiLake-PanoramaRidge.jpeg?alt=media&token=58476a8d-c68c-4fd7-9242-3328c860a14a"
+                    class="d-block w-100 carousel-img" alt="View of Garibaldi Lake"> -->
+                <img src="" id="main-img"
+                    class="d-block w-100 carousel-img">
                 <div class="carousel-caption">
-                    <h6 class="caption-text">View of Garibaldi Lake</h6>
+                    <h6 class="caption-text" id="image-caption"></h6>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://drive.google.com/thumbnail?id=1Iw6UxguXwjNyQPdNyPxN0cmLQH8ri-7o"
-                    class="d-block w-100 carousel-img" alt="Garibaldi Map">
+                <img src="" id="map-img"
+                    class="d-block w-100 carousel-img" >
                 <div class="carousel-caption">
-                    <h6 class="caption-text map-text">Garibaldi Map</h6>
+                    <h6 class="caption-text map-text" id="map-caption"></h6>
                 </div>
             </div>
             <!-- <div class="carousel-item">
@@ -92,27 +97,22 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="info-section">
-                    <p><strong>Location:</strong> Squamish-Lillooet Regional, BC</p>
-                    <p><strong>Length:</strong> 18.2km</p>
-                    <p><strong>Difficulty:</strong> 3/5</p>
+                    <p id="location-para"><strong>Location:</strong> <span id="location-value"></span></p>
+                    <p><strong>Length:</strong> <span id="length-value"></span></p>
+                    <p><strong>Difficulty:</strong> <span id="difficulty-value"></span></p>
                     <p><strong>Conditions/Hazards:</strong></p>
-                    <ul>
-                        <li>Beware of bears from May to October</li>
-                        <li>Snow storms from November to February</li>
+                    <ul id="conditions-list">
+
                     </ul>
 
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="info-section">
-                    <p><strong>Description:</strong> City, ocean, and mountain views, combined with window shopping and
-                        understanding the history of the city.
+                    <p><strong>Description:</strong> <span id="description-value"></span>
                     </p>
                     <br>
-                    <p><strong>Accessibility:</strong> There are many parking spaces in the paved parking lots at the
-                        northeast end of the trail at the intersection of Carall and Powell, but it is unclear if any of
-                        them have designated accessible spaces or striped access aisles. The trail surface is paved
-                        (sidewalk, brick, or asphalt) and typically 1 - 2 meters wide.</p>
+                    <p><strong>Accessibility:</strong> <span id="accessibility-value"></span></p>
                     <br>
                     <!-- <p>Difficulty: 3/5</p> -->
                     <!-- <p>Conditions/Hazards:</p> -->
@@ -150,10 +150,70 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // const firebase = require("firebase");
+        // require("firebase/firestore");
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyAPes5NkunBodm_wtBsW8b-78t8jNfhsgE",
+            authDomain: "trailmates-657f0.firebaseapp.com",
+            projectId: "trailmates-657f0",
+            storageBucket: "trailmates-657f0.appspot.com",
+            messagingSenderId: "877707794753",
+            appId: "1:877707794753:web:a9ee3826e467041bed69c0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
     <script>
         $('.carousel').carousel({
             interval: false
         })
+
+        function hikeQuery() {
+            // firebase.auth().onAuthStateChanged(function (user) {
+            console.log(db.collection('hikeDetails').doc('2tIFbWU56U4rbD75YTo3').collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P'))
+            db.collection('hikeDetails').doc('2tIFbWU56U4rbD75YTo3')
+                .collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P')
+                .get()
+                .then(
+                    doc => {
+                        const data1 = doc.data();
+                        console.log(data1)
+                        $("#hike-title-heading").html(data1.Name)
+                        $("#main-img").attr("src", data1.imgsrc)
+                        $("#map-img").attr("src", data1.mapsrc)
+                        $("#image-caption").html(data1.ImageCaption)
+                        $("#map-caption").html(data1.MapCaption)
+                        $("#description-value").html(data1.Description)
+                        $("#accessibility-value").html(data1.Accessibility)
+                        $("#location-value").html(data1.location)
+                        $("#length-value").html(data1.Length)
+                        $("#difficulty-value").html(data1.difficulty)
+                        for (i = 0; i < data1.conditions.length; i++) {
+                            console.log(i)
+                            console.log(data1.conditions[i])
+                            $("#conditions-list").append("<li>" + data1.conditions[i] + "</li>")
+
+                        }
+                        // $("#conditions-list").html("<li>" + data1.conditions[i] +  "</li>")
+                    }
+                )
+            // })
+        };
+
+        hikeQuery()
     </script>
 </body>
 
