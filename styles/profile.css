@@ -10,8 +10,14 @@ main {
     background-color: deeppink;
 }
 
-.profileInfo {
-
+.profileInfo .imageName {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    width: 50%;
+    max-width: 200px;
 }
 
 .utility {
@@ -25,7 +31,20 @@ main {
     display: flex;
     flex-direction: row;
     align-content: center;
+    justify-content: center;
     background-color: deepskyblue;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+
+.tags .tagCard {
+    text-align: center;
+    border-color: #555;
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px #555;
+    padding: 6px 4px 1px 4px;
 }
 
 .bio {
