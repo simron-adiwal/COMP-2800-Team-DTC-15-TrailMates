@@ -20,6 +20,38 @@ main {
     max-width: 200px;
 }
 
+.basicInfo {
+    display: flex;
+    flex-direction: row;
+    max-width: 200px;
+}
+
+.basicInfo:nth-child(n){
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.age-gender {
+    display: flex;
+    flex-direction: column;
+width: 100%;
+}
+
+.age-gender p {
+    margin: 0 0 0 0;
+}
+
+.repBadge{
+    width: 50%;
+}
+
+.totalHikes {
+    width: 50%;
+}
+
 .utility {
     display: flex;
     flex-direction: row;
