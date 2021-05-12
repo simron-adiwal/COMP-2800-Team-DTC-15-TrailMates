@@ -42,7 +42,7 @@ article {
     width: 80vw;
     text-align:center;
     align-content: center;
-    margin: auto;
+    margin: 0 auto 30px auto;
     padding: 30px 1vw 30px 1vw;
     border: 2px #cbdcbd solid;
     border-radius: 20px;
