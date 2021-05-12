@@ -39,7 +39,7 @@
 
 header {
   display: fixed;
-  top: 0px;
+  top: 0;
   height: 60px;
   background-color: #6ABF40;
 }
@@ -57,7 +57,7 @@ header {
 
 header > div {
   position: fixed;
-  top: 0px;
+  top: 0;
   width: 100vw;
   display: flex;
   justify-content: center;

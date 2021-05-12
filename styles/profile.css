@@ -3,16 +3,11 @@ main {
     margin-top: 5vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    width: 100%;
 }
-
-/* Remove this */
-/* vvvvvvvvvvv */
-div {
-    border: black solid;
-}
-/* ^^^^^^^^^^^ */
-/* Remove this */
-
 
 .profileInfo {
     display: flex;
@@ -53,15 +48,23 @@ div {
 .age-gender {
     display: flex;
     flex-direction: column;
-width: 100%;
+    width: 100%;
+    height: auto;
+    padding-top: 3vw;
 }
 
 .age-gender p {
     margin: 0 0 0 0;
+    font-size: 85%;
 }
 
 .repBadge{
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    height: 100%;
 }
 
 .totalHikes {
@@ -92,11 +95,19 @@ width: 100%;
     border-radius: 20px;
     box-shadow: 0 5px 5px #555;
     padding: 6px 4px 1px 4px;
+    margin-bottom: 1vw;
+}
+
+.tags .tagCard h6 {
+    font-size: 90%;
 }
 
 .bio {
     display: flex;
-    padding: 2vw 10vw 0.5vw 10vw;
+    padding: 2vw 7vw 0.5vw 7vw;
+    background-color: #cbdcbd;
+    border-radius: 15px;
+    margin: 10px 5vw 0 5vw;
 }
 
 .profileImages {
@@ -104,13 +115,19 @@ width: 100%;
     grid-template-columns: repeat(2, 40vw);
     justify-content: center;
     grid-gap: 2vw;
-padding-top: 2vw;
+    padding-top: 2vw;
 }
 
 .profileImages img {
     width: 40vw;
     object-fit: cover;
     height: 40vw;
+}
+
+.iconify {
+    height: 40px;
+    width: 40px;
+    display: flex;
 }
 
 #avatar {
@@ -127,6 +144,12 @@ padding-top: 2vw;
     border-radius: 25px;
     background-color: #ffffff;
     padding: 0 2vw;
+}
+
+#dropdownMenuButton1 {
+    border: solid 1px;
+    border-radius: 25px;
+    align-content: center;
 }
 
 
