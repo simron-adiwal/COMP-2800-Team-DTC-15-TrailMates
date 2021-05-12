@@ -5,4 +5,8 @@
     width: 20vw;
     height: 20vw;
     object-fit: cover;
+    border-style: solid;
+    border-color: #cbdcbd;
+    border-width: 2vw;
+    margin: 0 -1vw 0 -1vw ;
 }
