@@ -1,5 +1,6 @@
 
 main {
+    margin-top: 5vw;
     display: flex;
     flex-direction: column;
 }
@@ -35,6 +36,10 @@ div {
     display: flex;
     flex-direction: row;
     max-width: 200px;
+    height: 100%;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
 }
 
 .basicInfo:nth-child(n){
@@ -111,7 +116,17 @@ padding-top: 2vw;
 #avatar {
     width: 100%;
     height: 100%;
+    max-width: 30vw;
+    max-height: 30vw;
     border-radius: 50%;
+    align-self: center;
+    margin-right: 5vw;
+}
+
+#add-trailmate {
+    border-radius: 25px;
+    background-color: #ffffff;
+    padding: 0 2vw;
 }
 
 
