@@ -10,3 +10,12 @@
     border-width: 2vw;
     margin: 0 -1vw 0 -1vw ;
 }
+
+.profiles {
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
