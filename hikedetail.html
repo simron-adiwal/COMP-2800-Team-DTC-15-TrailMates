@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="shortcut icon" type="image/jpg" style="width: 16px; height:16px;" href="./images/trailmates_favicon.png"/>
     <!-- Bootstrap CSS -->
 
     <title>Hike Details</title>
@@ -183,9 +183,12 @@
 
         function hikeQuery() {
             // firebase.auth().onAuthStateChanged(function (user) {
-            console.log(db.collection('hikeDetails').doc('2tIFbWU56U4rbD75YTo3').collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P'))
-            db.collection('hikeDetails').doc('2tIFbWU56U4rbD75YTo3')
-                .collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P')
+            // console.log(db.collection('hikeDetails').doc('d').collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P'))
+            
+            // db.collection('hikeDetails').doc('Garibaldi')
+            db.collection('hikeDetails').doc('Grouse Grind')
+
+                // .collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P')
                 .get()
                 .then(
                     doc => {
