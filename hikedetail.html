@@ -39,11 +39,12 @@
     </div>
 
     <header>
-        <p><span id="icon" onclick="openClose()"> &#9776; </span></p>
-        <div>
-            <img id="logo" src="./images/TrailMates-white.png">
+        <p><span id="menu-button" onclick="openClose()"> &#9776; </span></p>
+        <div style="text-align: center"> <!-- only way this fucker centers -->
+            <a href="landingpage.html">
+                <img alt="Help" id="logo" src="./images/TrailMates-white.png">
+            </a>
         </div>
-
     </header>
 
 
@@ -185,7 +186,7 @@
         function hikeQuery() {
             // firebase.auth().onAuthStateChanged(function (user) {
             // console.log(db.collection('hikeDetails').doc('d').collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P'))
-            
+
             // db.collection('hikeDetails').doc('Garibaldi')
             db.collection('hikeDetails').doc('Kennedy Falls')
 
