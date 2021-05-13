@@ -1,0 +1,61 @@
+.avatar {
+    border-radius: 50%;
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+    border-style: solid;
+    border-color: #cbdcbd;
+    border-width: 2vw;
+    margin: 0 -1vw 0 -1vw ;
+}
+
+.profiles {
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.profile h5 {
+    background-color: #cbdcbd;
+    border: solid #cbdcbd 0.5vw;
+    border-radius: 5vw;
+    margin: -10px 0 0 0;
+    padding: 5px 0 5px 0;
+    font-size: 4vw;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80vw;
+    text-align:center;
+    align-content: center;
+    margin: auto;
+    padding: 30px 1vw 30px 1vw;
+    border: 2px #cbdcbd solid;
+    border-radius: 20px;
+}
+
+@media screen and (min-width: 700px){
+    .profile h5 {
+        background-color: #cbdcbd;
+        border: solid #cbdcbd 0.5vw;
+        border-radius: 5vw;
+        margin: -10px 0 0 0;
+        padding: 5px 0 5px 0;
+        font-size: 20pt;
+    }
+}
+
