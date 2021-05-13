@@ -5,13 +5,14 @@ border: black solid
 */
 
 main {
-    margin-top: 5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     align-self: center;
     width: 100%;
+    margin: auto;
+    max-width: 600px;
 }
 
 .profileInfo {
@@ -158,12 +159,45 @@ main {
     justify-content: center;
     grid-gap: 2vw;
     padding-top: 2vw;
+    margin: auto;
+    max-width: 600px;
+    justify-self: center;
+}
+
+@media screen and (min-width: 600px){
+    .profileImages {
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        justify-content: center;
+        grid-gap: 2vw;
+        padding-top: 2vw;
+        margin: auto;
+        max-width: 600px;
+    }
+}
+
+.profileImages a {
+    max-width: 300px;
+    width: auto;
+}
+
+.img-thumbnail {
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.img-thumbnail:nth-child(2n-1) {
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .profileImages img {
     width: 40vw;
     object-fit: cover;
     height: 40vw;
+    max-width:300px;
+    max-height: 300px;
 }
 
 .iconify {
