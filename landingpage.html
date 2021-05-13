@@ -37,17 +37,20 @@
 
 <header>
     <p><span id="menu-button" onclick="openClose()"> &#9776; </span></p>
-    <div>
-        <img alt="Help" id="logo" src="./images/TrailMates-white.png">
+    <div style="text-align: center"> <!-- only way this fucker centers -->
+        <a href="landingpage.html">
+            <img alt="Help" id="logo" src="./images/TrailMates-white.png">
+        </a>
     </div>
 </header>
 
-<div class="landing-search">
+<div id="landing-search">
     <!-- TODO: Add background image for search -->
     <label>
         <input class="search-hikes" type="text" placeholder="Search Hikes">
     </label>
 </div>
+<script src="scripts/landingpage.js"></script>
 
 <!-- Bootstrap Carousel Template -->
 <div class="carousel-container">

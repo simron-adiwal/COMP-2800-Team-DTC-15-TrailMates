@@ -85,6 +85,9 @@ header div a {
     /* Side Nav CSS */
 
 body{
-margin-top: 125px;
+  margin-top: 75px;
 }
 
+.scroll-test-filler {
+  height: 1000px;
+}
