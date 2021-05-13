@@ -1,0 +1,51 @@
+.google {
+    width: 25px;
+    height: 25px;
+}
+.login-input-section {
+	padding-top: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.login-input {
+    margin-top: 20px;
+	margin-bottom: 10px;
+}
+.login-input-password {
+    margin-bottom: 10px;
+}
+
+.sign-up {
+    padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.first-name {
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+.last-name {
+	margin-bottom: 10px;
+}
+.sign-up-id {
+	margin-bottom: 10px;
+}
+.sign-up-pw {
+	margin-bottom: 10px;
+}
+.email {
+	margin-bottom: 10px;
+}
+.phone-num {
+	margin-bottom: 10px;
+}
+.sign-with-google {
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

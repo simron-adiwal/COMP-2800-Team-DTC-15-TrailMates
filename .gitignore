@@ -64,3 +64,9 @@ node_modules/
 
 # dotenv environment variables file
 .env
+/.idea/.gitignore
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/jsLibraryMappings.xml
+/.idea/modules.xml
+/.idea/Team-15-hiking-app.iml
+/.idea/vcs.xml
