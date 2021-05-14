@@ -84,7 +84,9 @@ header div a {
 
     /* Side Nav CSS */
 
-body{
+body {
+  display: flex;
+  flex-direction: column;
   margin-top: 75px;
 }
 
