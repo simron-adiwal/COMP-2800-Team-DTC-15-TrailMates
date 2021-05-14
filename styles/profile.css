@@ -128,10 +128,9 @@ main {
 
 .tags .tagCard {
     text-align: center;
-    border-color: #555;
-    border-style: solid;
+    border: 2px solid #a4a4a4;
     border-radius: 20px;
-    box-shadow: 0 5px 5px #555;
+    box-shadow: 0 5px 5px #a4a4a4;
     padding: 6px 4px 1px 4px;
     margin-bottom: 1vw;
 }
