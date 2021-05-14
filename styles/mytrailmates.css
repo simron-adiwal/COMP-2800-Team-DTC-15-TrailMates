@@ -22,3 +22,7 @@ section {
   justify-content: center;
   flex-direction: column;
 }
+
+.card-body {
+  text-align: end;
+}
