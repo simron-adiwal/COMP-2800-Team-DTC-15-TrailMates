@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="./styles/custom.css">
     <link rel="stylesheet" href="./styles/mytrailmates.css">
 
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Page Title -->
     <title>TrailMates</title>
 </head>
@@ -48,14 +51,15 @@
     <div>
         <h3>My TrailMates</h3>
     </div>
-    <div class='search bar'>
-
+    <div class='searchbar'>
+        <input type="text" placeholder="Search">        
+        <button type="submit"><i class="fa fa-search"></i></button>
     </div>
     <section>
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
-                <div class="col-md-4" id="profile image">
-                    <img src="https://randomuser.me/api/portraits/thumb/men/4.jpg" alt="...">
+                <div class="col-md-4">
+                    <img src="https://randomuser.me/api/portraits/thumb/men/4.jpg" alt="..." id="profile image" >
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -82,7 +86,7 @@
             </div>
         </div>
 
-       
+
     </section>
 
 
