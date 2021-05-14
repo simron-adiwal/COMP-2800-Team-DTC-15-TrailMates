@@ -5,13 +5,14 @@ border: black solid
 */
 
 main {
-    margin-top: 5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     align-self: center;
     width: 100%;
+    margin: auto;
+    max-width: 600px;
 }
 
 .profileInfo {
@@ -127,10 +128,9 @@ main {
 
 .tags .tagCard {
     text-align: center;
-    border-color: #555;
-    border-style: solid;
+    border: 2px solid #a4a4a4;
     border-radius: 20px;
-    box-shadow: 0 5px 5px #555;
+    box-shadow: 0 5px 5px #a4a4a4;
     padding: 6px 4px 1px 4px;
     margin-bottom: 1vw;
 }
@@ -142,7 +142,7 @@ main {
 .bio {
     min-height: 100px;
     display: flex;
-    padding: 2vw 7vw 0.5vw 7vw;
+    padding: 15px 15px 10px 15px;
     background-color: #cbdcbd;
     border-radius: 15px;
     margin: 10px 5vw 0 5vw;
@@ -158,12 +158,45 @@ main {
     justify-content: center;
     grid-gap: 2vw;
     padding-top: 2vw;
+    margin: auto;
+    max-width: 600px;
+    justify-self: center;
+}
+
+@media screen and (min-width: 600px){
+    .profileImages {
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        justify-content: center;
+        grid-gap: 2vw;
+        padding-top: 2vw;
+        margin: auto;
+        max-width: 600px;
+    }
+}
+
+.profileImages a {
+    max-width: 300px;
+    width: auto;
+}
+
+.img-thumbnail {
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.img-thumbnail:nth-child(2n-1) {
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .profileImages img {
     width: 40vw;
     object-fit: cover;
     height: 40vw;
+    max-width:300px;
+    max-height: 300px;
 }
 
 .iconify {

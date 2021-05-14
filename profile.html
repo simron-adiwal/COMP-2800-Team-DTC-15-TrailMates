@@ -45,7 +45,7 @@
 
 <header>
     <p><span id="menu-button" onclick="openClose()"> &#9776; </span></p>
-    <div style="text-align: center"> <!-- only way this fucker centers -->
+    <div style="text-align: center">
         <a href="landingpage.html">
             <img alt="Help" id="logo" src="./images/TrailMates-white.png">
         </a>
@@ -91,7 +91,7 @@
         <div class="dropdown">
         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">...</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Report this Asshole</a></li>
+                <li><a class="dropdown-item" href="#">Report User</a></li>
             </ul>
         </div>
     </div>
@@ -119,32 +119,15 @@
 
     <!-- Additional User Images -->
     <div class="profileImages">
-        <a href="https://www.google.ca"><img src="https://via.placeholder.com/500x1000" class="img-thumbnail" alt="User Image" ></a>
-        <img src="https://via.placeholder.com/1000x500" class="img-thumbnail" alt="User Image" >
+        <a class ="" href="https://www.google.ca"><img src="https://via.placeholder.com/500x1000" class="img-thumbnail" alt="User Image" ></a>
+        <img src="https://via.placeholder.com/1000x500" class="img-thumbnail grid-center" alt="User Image" >
         <img src="https://via.placeholder.com/500" class="img-thumbnail" alt="User Image" >
         <img src="https://via.placeholder.com/500" class="img-thumbnail" alt="User Image" >
     </div>
 </main>
 </body>
 
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<script>
-    // Your web app's Firebase configuration
-    let firebaseConfig = {
-        apiKey: "AIzaSyAPes5NkunBodm_wtBsW8b-78t8jNfhsgE",
-        authDomain: "trailmates-657f0.firebaseapp.com",
-        projectId: "trailmates-657f0",
-        storageBucket: "trailmates-657f0.appspot.com",
-        messagingSenderId: "877707794753",
-        appId: "1:877707794753:web:a9ee3826e467041bed69c0"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-</script>
+<script src="scripts/team-15-api-key.js"></script>
 </html>

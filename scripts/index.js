@@ -1,4 +1,7 @@
 
+/**
+ * Operates the toggling of the side navbar
+ */
 function openClose() {
   let style = getComputedStyle(document.getElementById("mySidenav"))
   let width = style.width;

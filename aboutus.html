@@ -26,6 +26,7 @@
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
 
+<!-- Our Scripts -->
 <script src="scripts/index.js"></script>
 
 <!-- Side Nav -->
@@ -41,7 +42,7 @@
 
 <header>
     <p><span id="menu-button" onclick="openClose()"> &#9776; </span></p>
-    <div style="text-align: center"> <!-- only way this fucker centers -->
+    <div style="text-align: center">
         <a href="landingpage.html">
             <img alt="Help" id="logo" src="./images/TrailMates-white.png">
         </a>
@@ -91,24 +92,7 @@
 </article>
 </body>
 
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<script>
-    // Your web app's Firebase configuration
-    let firebaseConfig = {
-        apiKey: "AIzaSyAPes5NkunBodm_wtBsW8b-78t8jNfhsgE",
-        authDomain: "trailmates-657f0.firebaseapp.com",
-        projectId: "trailmates-657f0",
-        storageBucket: "trailmates-657f0.appspot.com",
-        messagingSenderId: "877707794753",
-        appId: "1:877707794753:web:a9ee3826e467041bed69c0"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-</script>
+<script src="scripts/team-15-api-key.js"></script>
 </html>
