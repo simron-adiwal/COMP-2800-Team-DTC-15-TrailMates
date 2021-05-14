@@ -127,78 +127,77 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-
-    <!-- Bootstrap Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-            crossorigin="anonymous"></script>
-
-
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
-    <script src="scripts/team-15-api-key.js"></script>
-
-    <!-- Our Scripts -->
-    <script src="scripts/index.js"></script>
-    <script src="scripts/hikedetail.js"></script>
-
-    <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-            crossorigin="anonymous"></script>
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-            crossorigin="anonymous"></script>
-
-    <!-- Optional JavaScript -->
-    <script>
-        $('.carousel').carousel({
-            interval: false
-        })
-
-        function hikeQuery() {
-            // firebase.auth().onAuthStateChanged(function (user) {
-            // console.log(db.collection('hikeDetails').doc('d').collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P'))
-
-            // db.collection('hikeDetails').doc('Garibaldi')
-            db.collection('hikeDetails').doc('Kennedy Falls')
-
-                // .collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P')
-                .get()
-                .then(
-                    doc => {
-                        const data1 = doc.data();
-                        console.log(data1)
-                        $("#hike-title-heading").html(data1.Name)
-                        $("#main-img").attr("src", data1.imgsrc)
-                        $("#map-img").attr("src", data1.mapsrc)
-                        $("#image-caption").html(data1.ImageCaption)
-                        $("#map-caption").html(data1.MapCaption)
-                        $("#description-value").html(data1.Description)
-                        $("#accessibility-value").html(data1.Accessibility)
-                        $("#location-value").html(data1.location)
-                        $("#length-value").html(data1.Length)
-                        $("#difficulty-value").html(data1.difficulty)
-                        for (i = 0; i < data1.conditions.length; i++) {
-                            console.log(i)
-                            console.log(data1.conditions[i])
-                            $("#conditions-list").append("<li>" + data1.conditions[i] + "</li>")
-
-                        }
-                        // $("#conditions-list").html("<li>" + data1.conditions[i] +  "</li>")
-                    }
-                )
-            // })
-        };
-        hikeQuery()
-    </script>
 </body>
 
+<!-- Bootstrap Scripts-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+<script src="scripts/team-15-api-key.js"></script>
+
+<!-- Our Scripts -->
+<script src="scripts/index.js"></script>
+<script src="scripts/hikedetail.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+<!-- Optional JavaScript -->
+<script>
+    $('.carousel').carousel({
+        interval: false
+    })
+
+    function hikeQuery() {
+        // firebase.auth().onAuthStateChanged(function (user) {
+        // console.log(db.collection('hikeDetails').doc('d').collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P'))
+
+        // db.collection('hikeDetails').doc('Garibaldi')
+        db.collection('hikeDetails').doc('Kennedy Falls')
+
+            // .collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P')
+            .get()
+            .then(
+                doc => {
+                    const data1 = doc.data();
+                    console.log(data1)
+                    $("#hike-title-heading").html(data1.Name)
+                    $("#main-img").attr("src", data1.imgsrc)
+                    $("#map-img").attr("src", data1.mapsrc)
+                    $("#image-caption").html(data1.ImageCaption)
+                    $("#map-caption").html(data1.MapCaption)
+                    $("#description-value").html(data1.Description)
+                    $("#accessibility-value").html(data1.Accessibility)
+                    $("#location-value").html(data1.location)
+                    $("#length-value").html(data1.Length)
+                    $("#difficulty-value").html(data1.difficulty)
+                    for (i = 0; i < data1.conditions.length; i++) {
+                        console.log(i)
+                        console.log(data1.conditions[i])
+                        $("#conditions-list").append("<li>" + data1.conditions[i] + "</li>")
+
+                    }
+                    // $("#conditions-list").html("<li>" + data1.conditions[i] +  "</li>")
+                }
+            )
+        // })
+    };
+    hikeQuery()
+</script>
 </html>
