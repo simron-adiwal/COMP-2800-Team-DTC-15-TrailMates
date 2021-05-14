@@ -27,13 +27,33 @@
     opacity: 0.50;
 }
 
-h5, h6, p, a {
+h5, h6 {
     position: relative;
     color: black;  
     /* font-size: 14rem; */
     line-height: 0.9;
     text-align: left;
 }
+
+.card-body  p {
+    position: relative;
+    color: black;  
+    /* font-size: 14rem; */
+    line-height: 0.9;
+    text-align: left;
+}
+
+
+
+.a-card {
+    position: relative;
+    color: black;  
+    /* font-size: 14rem; */
+    line-height: 0.9;
+    text-align: left;
+}
+
+
 
 .hikeName {
     /* right: 35%; */
