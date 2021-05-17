@@ -1,0 +1,29 @@
+body{
+    margin-top: 75px;
+    display:flex;
+    flex-direction: column;
+}
+
+#landing-search {
+    display: flex;
+    height: 400px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center;
+}
+
+.carousel-container {
+    margin-top: 30px;
+    width: 80vw;
+    max-width: 500px;
+    align-self: center;
+    justify-self: center;
+}
+
+.search-hikes {
+    border-radius: 25px;
+}

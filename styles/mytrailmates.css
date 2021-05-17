@@ -1,0 +1,28 @@
+.searchbar {
+    padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  margin-bottom: 8px;
+  font-size: 17px;
+
+}
+.profile_image {
+    border-radius: 50%;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-body {
+  text-align: end;
+}
