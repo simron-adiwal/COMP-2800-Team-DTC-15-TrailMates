@@ -1,0 +1,21 @@
+form {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 95vw;
+    margin-bottom: 50px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+}
+
+#submit-profile {
+    align-self: center;
+    max-width: 200px;
+    border-radius: 25px;
+    background-color: #cbdcbd;
+    border: none;
+    padding: 3px 5px;
+}

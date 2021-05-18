@@ -12,6 +12,7 @@
   <!-- Custom CSS Link -->
   <link rel="stylesheet" href="./styles/custom.css">
   <link rel="stylesheet" href="./styles/profile.css">
+  <link rel="stylesheet" href="./styles/editProfile.css">
 
   <!-- Page Title -->
   <title>TrailMates</title>
@@ -54,26 +55,30 @@
 
 <!-- Content -->
 <main>
-<!-- Upload an Avatar Image -->
   <form>
+    <!-- Upload an Avatar Image -->
     <div class="profilePic">
+      <h6><label for="profilePicUpload">Upload a Profile Picture</label></h6>
       <input id="profilePicUpload" type="file">
-      <label for="profilePicUpload">Upload a Profile Picture</label>
-    </div>
+    </div><br>
 
-    <label for="age">Age:</label>
-    <input id="age" type="number">
+    <!-- Age and Gender -->
+    <h6><label for="age">Age:</label></h6>
+    <input id="age" type="number" min="13" max="100">
+    <br>
     <div class="gender">
+      <h6>Gender:</h6>
       <input name="genderradio" value="Male" id="male" type="radio">
       <label for="male">Male:</label>
       <input name="genderradio" value="Female" id="female" type="radio">
       <label for="female">Female</label>
       <input name="genderradio" value="Other" id="otherGender" type="radio">
       <label for="otherGender">Other</label>
-    </div>
+    </div><br>
 
+    <!-- Social Media Links -->
     <div class="social-links">
-      <h5>Social Media Links</h5>
+      <h6>Social Media Links</h6>
       <label for="facebook-link">Facebook</label>
       <input id="facebook-link" type="url">
       <label for="gram-link">Instagram</label>
@@ -82,21 +87,28 @@
       <input id="twitter-link" type="url">
       <label for="snap-link">Snapchat</label>
       <input id="snap-link" type="url">
-    </div>
+    </div><br>
 
+    <!-- User Tags -->
     <div class="usertags">
-      <label for="tag">Tags</label>
+      <!-- TODO: Script button to add more fields -->
+      <h6><label for="tag">Tags</label></h6>
       <input id="tag" type="text">
       <button>+</button>
-    </div>
+    </div><br>
 
-    <label for="bio">Bio</label>
+    <!-- Bio -->
+    <h6><label for="bio">Bio</label></h6>
     <input id="bio" type="text">
+    <br>
 
-    <label for="other-pics">Other pictures</label>
+    <!-- User Pictures -->
+    <h6><label for="other-pics">Other pictures</label></h6>
     <input id="other-pics" type="file">
+    <br>
 
-    <button type="submit" value="Submit">Finish Editing</button>
+    <!-- Submit Form -->
+    <button id="submit-profile" type="submit" value="Submit">Finish Editing</button>
   </form>
 </main>
 </body>
