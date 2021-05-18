@@ -58,22 +58,22 @@
         <!-- Basic Profile Info -->
         <div class="imageName">
             <img id="avatar" alt="profileImage" src="https://randomuser.me/api/portraits/men/45.jpg">
-            <h3>Kevin</h3>
+            <h3 id="profileName" style="color: white;">Name</h3>
         </div>
         <div class="basicInfo">
             <div class="repBadge">
                 <img id="badge" alt="repBadge" src="https://via.placeholder.com/40">
-                <span>90 Rep</span>
+                <h6><span id="profileRep">90</span> Rep</h6>
             </div>
             <div class="totalHikes">
-                <h3>50</h3>
+                <h3 id="profileHikes">50</h3>
                 <span>Total Hikes</span>
             </div>
             <div class="age-gender">
                 <p>
-                    Age: <span class="age">35</span><br>
-                    Gender: <span class="gender">M</span><br>
-                    Joined: <span class="user-since">January 2020</span>
+                    Age: <span class="age" id="profileAge">35</span><br>
+                    Gender: <span class="gender" id="profileGender">M</span><br>
+                    Joined: <span class="user-since" id="profileJoined">January 2020</span>
                 </p>
             </div>
         </div>
@@ -114,7 +114,7 @@
 
     <!-- User Bio -->
     <div class="bio">
-        <p>Hello and welcome to my exciting TrailMates bio. My name is Kevin and I'm the best in town.</p>
+        <p id="profileBio" style="color: #cbdcbd;">Nothing here :(</p>
     </div>
 
     <!-- Additional User Images -->
@@ -128,6 +128,11 @@
 </body>
 
 <!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
 <script src="scripts/team-15-api-key.js"></script>
+<script src="scripts/profile.js"></script>
 </html>
