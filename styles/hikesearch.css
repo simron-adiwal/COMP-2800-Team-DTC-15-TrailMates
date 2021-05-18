@@ -20,20 +20,24 @@
     background-image: url('https://firebasestorage.googleapis.com/v0/b/trailmates-657f0.appspot.com/o/Garibaldi%2FGaribaldi%2FGaribaldiLake-PanoramaRidge.jpeg?alt=media&token=58476a8d-c68c-4fd7-9242-3328c860a14a');
     background-size: cover;
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     opacity: 0.50;
 }
 
-h5, h6 {
+
+.card-title.hikeName {
     position: relative;
     color: black;  
     /* font-size: 14rem; */
     line-height: 0.9;
     text-align: left;
 }
+
+
+
 
 .card-body  p {
     position: relative;
@@ -79,15 +83,23 @@ h5, h6 {
     /* display: flex; */
     /* justify-content: right; */
     /* margin-left: 200px; */
-    margin-top: 70px;
+    /* margin-top: 70px; */
     text-align: right;
     left: 10px;
     color: rgb(217, 255, 0);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 3%;
 
 }
 
-.createEvent {
+.card-link.createEvent.a-card {
     color: rgb(217, 255, 0);
-    bottom: 30px;
-    right: 25px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 3%;
+    /* bottom: 30px; */
+    /* right: 25px; */
 }
