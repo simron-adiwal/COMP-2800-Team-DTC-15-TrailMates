@@ -131,11 +131,16 @@ main {
 
 .tags .tagCard {
     text-align: center;
-    border: 2px solid #a4a4a4;
+    border: 1px solid #a4a4a4;
     border-radius: 20px;
-    box-shadow: 0 5px 5px #a4a4a4;
-    padding: 6px 4px 1px 4px;
+    box-shadow: 0 3px 3px #a4a4a4;
+    padding: 6px 10px 1px 8px;
     margin-bottom: 1vw;
+}
+
+.tags .tagCard:hover {
+    background-color: #cbdcbd;
+    cursor: pointer;
 }
 
 .tags .tagCard h6 {
@@ -166,7 +171,7 @@ main {
     justify-self: center;
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 700px){
     .profileImages {
         display: grid;
         grid-template-columns: repeat(2, 300px);
@@ -174,7 +179,7 @@ main {
         grid-gap: 2vw;
         padding-top: 2vw;
         margin: auto;
-        max-width: 600px;
+        max-width: 700px;
     }
 }
 
@@ -206,6 +211,10 @@ main {
     height: 40px;
     width: 40px;
     display: flex;
+}
+
+.iconify:hover {
+    color: black;
 }
 
 #avatar {
