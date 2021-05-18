@@ -1,5 +1,5 @@
 .searchbar {
-    padding: 6px;
+  padding: 6px;
   border: none;
   margin-top: 8px;
   margin-right: 16px;
@@ -8,7 +8,11 @@
 
 }
 .profile_image {
-    border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
 }
 
 section {
@@ -17,12 +21,13 @@ section {
   flex-direction: column;
 }
 
-.wrap {
+.searchbar {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  
 }
 
 .card-body {
   text-align: end;
 }
+
