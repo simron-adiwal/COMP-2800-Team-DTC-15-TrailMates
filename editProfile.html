@@ -58,18 +58,18 @@
   <form>
     <!-- Upload an Avatar Image -->
     <div class="profilePic">
-      <h6><label for="profilePicUpload">Upload a Profile Picture</label></h6>
+      <h6 class="form-header"><label for="profilePicUpload">Upload a Profile Picture</label></h6>
       <input id="profilePicUpload" type="file">
     </div><br>
 
     <!-- Age and Gender -->
-    <h6><label for="age">Age:</label></h6>
-    <input id="age" type="number" min="13" max="100">
+    <h6 class="form-header"><label for="age">Age</label></h6>
+    <input class="text-box" id="age" type="number" min="13" max="100">
     <br>
     <div class="gender">
-      <h6>Gender:</h6>
+      <h6 class="form-header"> Gender</h6>
       <input name="genderradio" value="Male" id="male" type="radio">
-      <label for="male">Male:</label>
+      <label for="male">Male</label>
       <input name="genderradio" value="Female" id="female" type="radio">
       <label for="female">Female</label>
       <input name="genderradio" value="Other" id="otherGender" type="radio">
@@ -78,32 +78,33 @@
 
     <!-- Social Media Links -->
     <div class="social-links">
-      <h6>Social Media Links</h6>
+      <h6 class="form-header">Social Media Links</h6>
       <label for="facebook-link">Facebook</label>
-      <input id="facebook-link" type="url">
+      <input class="text-box" id="facebook-link" type="url">
       <label for="gram-link">Instagram</label>
-      <input id="gram-link" type="url">
+      <input class="text-box" id="gram-link" type="url">
       <label for="twitter-link">Twitter</label>
-      <input id="twitter-link" type="url">
+      <input class="text-box" id="twitter-link" type="url">
       <label for="snap-link">Snapchat</label>
-      <input id="snap-link" type="url">
+      <input class="text-box" id="snap-link" type="url">
     </div><br>
 
     <!-- User Tags -->
     <div class="usertags">
       <!-- TODO: Script button to add more fields -->
-      <h6><label for="tag">Tags</label></h6>
-      <input id="tag" type="text">
-      <button>+</button>
+      <h6 class="form-header"><label for="tag">Tags</label></h6>
+      <input class="text-box" id="tag" type="text">
+      <button id="add-tags">+</button>
     </div><br>
 
     <!-- Bio -->
-    <h6><label for="bio">Bio</label></h6>
-    <input id="bio" type="text">
+    <h6 class="form-header"><label for="bio">Bio</label></h6>
+    <textarea id="bio" rows="5">
+    </textarea>
     <br>
 
     <!-- User Pictures -->
-    <h6><label for="other-pics">Other pictures</label></h6>
+    <h6 class="form-header"><label for="other-pics">Other pictures</label></h6>
     <input id="other-pics" type="file">
     <br>
 

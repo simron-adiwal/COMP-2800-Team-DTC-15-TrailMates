@@ -11,11 +11,48 @@ form {
     flex-direction: column;
 }
 
+.form-header {
+    background-color: #cbdcbd;
+    padding: 5px 5px 5px 10px;
+    border-radius: 25px;
+}
+
+.text-box {
+    border: black 1px solid;
+    border-radius: 25px;
+    outline: none;
+    padding-left: 10px;
+}
+
 #submit-profile {
     align-self: center;
     max-width: 200px;
     border-radius: 25px;
     background-color: #cbdcbd;
     border: none;
-    padding: 3px 5px;
+    padding: 3px 20px;
+}
+
+#submit-profile:hover {
+    background-color: #6abf40;
+    color: #f1f1f1;
+}
+
+#add-tags {
+    height: 30px;
+    width: 30px;
+    background-color: #cbdcbd;
+    border-radius: 50%;
+    border: none;
+}
+
+#add-tags:hover {
+    background-color: #6abf40;
+    color: #f1f1f1;
+}
+
+#bio {
+    border: 1px solid black;
+    border-radius: 10px;
+    outline: none;
 }
