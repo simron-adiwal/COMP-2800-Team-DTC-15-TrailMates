@@ -3,6 +3,9 @@ div {
 border: black solid
 }
 */
+body {
+    margin-top: 100px;
+}
 
 main {
     display: flex;
