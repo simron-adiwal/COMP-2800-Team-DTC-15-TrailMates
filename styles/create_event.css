@@ -1,0 +1,35 @@
+#create-event {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    min-width: 300px;
+}
+
+.form-header {
+    background-color: #cbdcbd;
+    border-radius: 25px;
+    padding: 5px 0 5px 8px;
+    margin-top: 5px;
+}
+
+.form-input {
+    margin-left: 5px;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+}
+
+#create-cancel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#cancel-button {
+    margin-right: 10px;
+}
+
+#create-button {
+    margin-right: 10px;
+}
+

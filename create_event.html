@@ -14,6 +14,7 @@
     <!-- Custom CSS Link -->
     <link rel="stylesheet" href="./styles/custom.css">
     <link rel="stylesheet" href="styles/landingpage.css">
+    <link rel="stylesheet" href="styles/create_event.css">
 
     <!-- Page Title -->
     <title>TrailMates</title>
@@ -50,36 +51,36 @@
     </div>
 </header>
 
-<h1>Create an Event</h1>
-<form action="/action_page.php">
-    <label for="fname">Event Name</label><br>
-    <input type="text" id="fname" placeholder="CST T1 Survived Hike"><br>
-    <label for="fname">Hike Name</label><br>
-    <input type="text" id="fname" placeholder="Garibaldi Lake"><br>
-    <label for="fname">Start Date and Time</label><br>
-    <input type="text" id="fname" placeholder="May 29th 2021 at 12:00pm"><br>
-    <label for="fname">Meetup Location</label><br>
-    <input type="text" id="fname" placeholder="Canada Place"><br>
-    <label for="fname">Length</label><br>
-    <input type="text" id="fname" placeholder="5 hours 30min"><br>
-    <label for="fname">Description</label><br>
-    <input type="text" id="fname" placeholder="Hike to celebrate completing T1 successfully!"><br><br>
-    <p>Event type:</p>
-    <input type="radio" id="public" name="eventtype" value="public">
-    <label for="public">Public</label>
-    <input type="radio" id="private" name="eventtype" value="private">
-    <label for="private">Private</label><br>
-    <input type="submit" value="Cancel">
-    <input type="submit" value="Create Event">
-    
-  </form> 
-
-
-
-
-
+<!-- Create Event Form -->
+<div id="create-event">
+<h3>Create an Event</h3>
+    <form action="/action_page.php">
+        <h6 class="form-header"><label for="event-name">Event Name</label></h6>
+        <input class="form-input" type="text" id="event-name" placeholder="CST T1 Survived Hike"><br>
+        <h6 class="form-header"><label for="hike-name">Hike Name</label></h6>
+        <input class="form-input" type="text" id="hike-name" placeholder="Garibaldi Lake"><br>
+        <h6 class="form-header"><label for="start-time">Start Date and Time</label></h6>
+        <input class="form-input" type="text" id="start-time" placeholder="May 29th 2021 at 12:00pm"><br>
+        <h6 class="form-header"><label for="meetup">Meetup Location</label></h6>
+        <input class="form-input" type="text" id="meetup" placeholder="Canada Place"><br>
+        <h6 class="form-header"><label for="hike-length">Length</label></h6>
+        <input class="form-input" type="text" id="hike-length" placeholder="5 hours 30min"><br>
+        <h6 class="form-header"><label for="hike-desc">Description</label><br></h6>
+        <input class="form-input" type="text" id="hike-desc" placeholder="Hike to celebrate completing T1 successfully!"><br>
+        <div id="event-type">
+            <h6 class="form-header"><span>Event type:</span></h6>
+            <input type="radio" id="public" name="eventtype" value="public">
+            <label for="public">Public</label>
+            <input type="radio" id="private" name="eventtype" value="private">
+            <label for="private">Private</label>
+        </div>
+        <br>
+        <div id="create-cancel">
+            <input id="cancel-button" type="submit" value="Cancel">
+            <input id="create-button" type="submit" value="Create Event">
+        </div>
+    </form>
 </div>
-
 </body>
 <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
