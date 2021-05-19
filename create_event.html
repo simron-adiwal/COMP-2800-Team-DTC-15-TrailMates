@@ -53,20 +53,20 @@
 
 <!-- Create Event Form -->
 <div id="create-event">
-<h3>Create an Event</h3>
+<h3 id="create-header">Create a New Event</h3>
     <form action="/action_page.php">
         <h6 class="form-header"><label for="event-name">Event Name</label></h6>
-        <input class="form-input" type="text" id="event-name" placeholder="CST T1 Survived Hike"><br>
+        <input class="form-input" type="text" id="event-name" placeholder="Event Name"><br>
         <h6 class="form-header"><label for="hike-name">Hike Name</label></h6>
-        <input class="form-input" type="text" id="hike-name" placeholder="Garibaldi Lake"><br>
+        <input class="form-input" type="text" id="hike-name" placeholder="Hike Name"><br>
         <h6 class="form-header"><label for="start-time">Start Date and Time</label></h6>
-        <input class="form-input" type="text" id="start-time" placeholder="May 29th 2021 at 12:00pm"><br>
+        <input class="form-input" type="text" id="start-time" placeholder="Time"><br>
         <h6 class="form-header"><label for="meetup">Meetup Location</label></h6>
-        <input class="form-input" type="text" id="meetup" placeholder="Canada Place"><br>
+        <input class="form-input" type="text" id="meetup" placeholder="Place"><br>
         <h6 class="form-header"><label for="hike-length">Length</label></h6>
-        <input class="form-input" type="text" id="hike-length" placeholder="5 hours 30min"><br>
+        <input class="form-input" type="text" id="hike-length" placeholder="Duration"><br>
         <h6 class="form-header"><label for="hike-desc">Description</label><br></h6>
-        <input class="form-input" type="text" id="hike-desc" placeholder="Hike to celebrate completing T1 successfully!"><br>
+        <input class="form-input" type="text" id="hike-desc" placeholder="Description"><br>
         <div id="event-type">
             <h6 class="form-header"><span>Event type:</span></h6>
             <input type="radio" id="public" name="eventtype" value="public">
@@ -76,8 +76,8 @@
         </div>
         <br>
         <div id="create-cancel">
-            <input id="cancel-button" type="submit" value="Cancel">
-            <input id="create-button" type="submit" value="Create Event">
+            <input class="create-event-buttons" id="cancel-button" type="submit" value="Cancel">
+            <input class="create-event-buttons" id="create-button" type="submit" value="Create Event">
         </div>
     </form>
 </div>
