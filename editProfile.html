@@ -57,7 +57,7 @@
 
 <!-- Content -->
 <main>
-  <form>
+  <form action="">
     <h3 id="edit-profile">Edit Profile</h3>
     <!-- Upload an Avatar Image -->
     <div class="profilePic">
@@ -95,8 +95,8 @@
     <!-- User Tags -->
     <div class="usertags">
       <h6 class="form-header"><label for="tag">Tags</label></h6>
-      <input class="text-box" id="tag" type="text">
-      <button id="add-tags">+</button>
+      <input class="text-box" id="tag" type="text" name="tag-form">
+      <input type="button" id="add-tags" value="+">
     </div><br>
 
     <!-- Bio -->
@@ -123,4 +123,5 @@
 <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
 <script src="scripts/team-15-api-key.js"></script>
 <script src="scripts/profile.js"></script>
+<script src="scripts/editProfile.js"></script>
 </html>
