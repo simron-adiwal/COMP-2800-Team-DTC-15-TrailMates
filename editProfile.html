@@ -33,6 +33,8 @@
 <!-- Our Scripts -->
 <script src="scripts/index.js"></script>
 
+
+
 <!-- Side Nav -->
 <div id="mySidenav" class="sidenav">
   <a href="profile.html">Profile</a>
@@ -60,12 +62,12 @@
     <!-- Upload an Avatar Image -->
     <div class="profilePic">
       <h6 class="form-header"><label for="profilePicUpload">Upload a Profile Picture</label></h6>
-      <input id="profilePicUpload" type="file">
+      <input id="profilePicUpload" type="file" name="profilePicUpload-form">
     </div><br>
 
     <!-- Age and Gender -->
     <h6 class="form-header"><label for="age">Age</label></h6>
-    <input class="text-box" id="age" type="number" min="13" max="100">
+    <input class="text-box" id="age" type="number" min="13" max="100" name="name-form">
     <br>
     <div class="gender">
       <h6 class="form-header"> Gender</h6>
@@ -81,18 +83,17 @@
     <div class="social-links">
       <h6 class="form-header">Social Media Links</h6>
       <label for="facebook-link">Facebook</label>
-      <input class="text-box" id="facebook-link" type="url">
+      <input class="text-box" id="facebook-link" type="url" name="facebook-form">
       <label for="gram-link">Instagram</label>
-      <input class="text-box" id="gram-link" type="url">
+      <input class="text-box" id="gram-link" type="url" name="gram-form">
       <label for="twitter-link">Twitter</label>
-      <input class="text-box" id="twitter-link" type="url">
+      <input class="text-box" id="twitter-link" type="url" name="twitter-form">
       <label for="snap-link">Snapchat</label>
-      <input class="text-box" id="snap-link" type="url">
+      <input class="text-box" id="snap-link" type="url" name="snap-form">
     </div><br>
 
     <!-- User Tags -->
     <div class="usertags">
-      <!-- TODO: Script button to add more fields -->
       <h6 class="form-header"><label for="tag">Tags</label></h6>
       <input class="text-box" id="tag" type="text">
       <button id="add-tags">+</button>
@@ -100,12 +101,12 @@
 
     <!-- Bio -->
     <h6 class="form-header"><label for="bio">Bio</label></h6>
-    <textarea id="bio" rows="5"></textarea>
+    <textarea id="bio" rows="5" name="bio-form"></textarea>
     <br>
 
     <!-- User Pictures -->
     <h6 class="form-header"><label for="other-pics">Other pictures</label></h6>
-    <input id="other-pics" type="file">
+    <input id="other-pics" type="file" name="other-pics-form">
     <br>
 
     <!-- Submit Form -->
