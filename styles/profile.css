@@ -131,15 +131,17 @@ main {
 
 .tags .tagCard {
     text-align: center;
-    border: 1px solid #a4a4a4;
+    border: 1px solid black;
     border-radius: 20px;
     box-shadow: 0 3px 3px #a4a4a4;
     padding: 6px 10px 1px 8px;
     margin-bottom: 1vw;
 }
 
-.tags .tagCard:hover {
-    background-color: #cbdcbd;
+.tags .tagCard:active, .tags .tagCard:hover {
+    border: none;
+    background-color: #6abf40;
+    color: white;
     cursor: pointer;
 }
 
@@ -232,15 +234,29 @@ main {
 }
 
 #add-trailmate {
+    border: 1px solid black;
     border-radius: 25px;
     background-color: #ffffff;
     padding: 0 2vw;
 }
 
-#dropdownMenuButton1 {
+#add-trailmate:active, #add-trailmate:hover {
+    border: none;
+    background-color: #6abf40;
+    color: white;
+}
+
+
+#extra-actions {
     border: solid 1px;
     border-radius: 25px;
     align-content: center;
+}
+
+#extra-actions:active, #extra-actions:hover {
+    border: none;
+    background-color: #6abf40;
+    color: white;
 }
 
 
