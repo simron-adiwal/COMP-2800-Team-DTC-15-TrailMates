@@ -42,6 +42,7 @@ function loadUserProfile(user) {
     bio.text(user.bio);
     bio.attr('style', "color: black;")
     addTags(user);
+    emptyLinks(user);
 }
 
 function addTags(user) {
@@ -55,6 +56,21 @@ function addTags(user) {
         newdiv.append(newtag);
         $('.tags').append(newdiv);
     });
+}
+
+function emptyLinks(user) {
+    if (!(user.linkFacebook)) {
+        $('#profileFacebook').remove();
+    }
+    if (!(user.linkTwitter)) {
+        $('#profileTwitter').remove();
+    }
+    if (!(user.linkInstagram)) {
+        $('#profileInstagram').remove();
+    }
+    if (!(user.linkSnapchat)) {
+        $('#profileSnapchat').remove();
+    }
 }
 
 function writeProfile(user) {

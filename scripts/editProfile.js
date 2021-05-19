@@ -1,27 +1,48 @@
-let myaddbutton = document.getElementById('add-tags');
+let myAddButton = document.getElementById('add-tags');
 
-console.log(myaddbutton);
-
-myaddbutton.addEventListener('click', (event) => {
-    // <input class="text-box" id="tag" type="text">
+myAddButton.addEventListener('click', (event) => {
+    let newBox = document.createElement('input');
     
-    let newbox = document.createElement('input');
-    newbox.setAttribute('class', 'text-box');
-    newbox.setAttribute('id', 'tag');
-    newbox.setAttribute('name', 'tag-form');
-    newbox.setAttribute('type', 'text');
+    newBox.setAttribute('class', 'text-box');
+    newBox.setAttribute('id', 'tag');
+    newBox.setAttribute('name', 'tag-form');
+    newBox.setAttribute('type', 'text');
     
-    myaddbutton.insertAdjacentElement('beforebegin', newbox);
-    
-    // let spans = document.getElementsByClassName('box');
-    // let lastspan = spans[spans.length-1];
-    // lastspan.setAttribute('style', 'display: block;');
-    // console.log('working');
-    // let mynewbox = document.createElement('span');
-    // mynewbox.setAttribute('class', 'box');
-    // mynewbox.setAttribute('style', 'display: inline-block;');
-    // let mytemplate = 'Todo Item <span>' + (document.getElementsByClassName('box').length + 1) + ' </span><input type="text" name="csvBox" id="inputBox" placeholder=""></textarea> ';
-    // mynewbox.innerHTML = mytemplate;
-    //
-    
+    myAddButton.insertAdjacentElement('beforebegin', newBox);
 });
+
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        // userId = user.uid;
+        db.collection("users").doc(user.uid).get().then(function(user) {
+            loadUserData(user.data());
+        });
+    }
+});
+
+function loadUserData(user) {
+    $('#age').attr('value', user.age);
+    let myGender = user.gender;
+    switch(myGender) {
+        case "M": $('#male').attr('checked', 'checked'); break;
+        case "F": $('#female').attr('checked', 'checked'); break;
+        default: $('#otherGender').attr('checked', 'checked'); break;
+    }
+    // Facebook link
+    if (user.linkFacebook) {
+        $('#facebook-link').attr('value', user.linkFacebook);
+    }
+    // Twitter link
+    if (user.linkTwitter) {
+        $('#twitter-link').attr('value', user.linkTwitter);
+    }
+    // Instagram Link
+    if (user.linkInstagram) {
+        $('#instagram-link').attr('value', user.linkInstagram);
+    }
+    // Snapchat Link
+    if (user.linkSnapchat) {
+        $('#snapchat-link').attr('value', user.linkSnapchat);
+    }
+    
+}
