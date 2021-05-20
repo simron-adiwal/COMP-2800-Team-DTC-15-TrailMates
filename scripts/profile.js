@@ -70,3 +70,15 @@ function emptyLinks(user) {
         $('#profileSnapchat').remove();
     }
 }
+
+/**
+ * Take user to the edit profile page.
+ */
+let toEdit = () => {
+    console.log("its working")
+    window.location.href = "editProfile.html";
+}
+
+// Edit Profile Button Listener
+let editProfileButton = document.getElementById('edit-profile-button');
+editProfileButton.addEventListener('click', toEdit);

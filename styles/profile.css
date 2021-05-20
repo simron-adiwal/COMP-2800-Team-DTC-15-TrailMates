@@ -260,4 +260,17 @@ main {
     color: white;
 }
 
+#edit-profile-button {
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: #ffffff;
+    padding: 0 2vw;
+    margin-right: 5px;
+    font-size: 85%;
+}
 
+#edit-profile-button:active, #edit-profile-button:hover {
+    border: none;
+    background-color: #6abf40;
+    color: white;
+}

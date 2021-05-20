@@ -57,3 +57,34 @@ function addTagBox() {
     
     myAddButton.insertAdjacentElement('beforebegin', newBox);
 }
+
+
+
+
+function submitProfile() {
+    let newTags = document.getElementsByName('tag-form');
+    let newTagValues = []
+    newTags.forEach((item) => {
+        newTagValues.push(item.value);
+    });
+    
+    console.log(newTagValues);
+    
+    
+    console.log("Now THIS is podracing!");
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            // userId = user.uid;
+            async function awaitUpdate() {
+                await db.collection("users").doc(user.uid).update({
+                    tags: newTagValues
+                })
+                window.location.href = "profile.html";
+            }
+            awaitUpdate();
+        }
+    })
+    
+}
+
+$('#submit-profile').click(submitProfile)
