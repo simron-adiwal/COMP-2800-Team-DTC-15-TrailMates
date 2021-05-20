@@ -1,16 +1,14 @@
+// Add Tags
 let myAddButton = document.getElementById('add-tags');
 
-myAddButton.addEventListener('click', (event) => {
-    let newBox = document.createElement('input');
-    
-    newBox.setAttribute('class', 'text-box');
-    newBox.setAttribute('id', 'tag');
-    newBox.setAttribute('name', 'tag-form');
-    newBox.setAttribute('type', 'text');
-    
-    myAddButton.insertAdjacentElement('beforebegin', newBox);
-});
+myAddButton.addEventListener('click', addTagBox);
 
+// Add TrailMate
+let addMateButton = document.getElementById('add-trailmate');
+
+addMateButton.addEventListener('click', addTrailMate)
+
+// Firebase Authorization
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         // userId = user.uid;
@@ -19,6 +17,12 @@ firebase.auth().onAuthStateChanged(user => {
         });
     }
 });
+
+// Functions
+/**
+ * Read the user's data from database and post it to the profile page.
+ * @param user
+ */
 
 function loadUserData(user) {
     $('#age').attr('value', user.age);
@@ -45,4 +49,25 @@ function loadUserData(user) {
         $('#snapchat-link').attr('value', user.linkSnapchat);
     }
     
+}
+
+/**
+ * Add another tag text box.
+ */
+function addTagBox() {
+    let newBox = document.createElement('input');
+    
+    newBox.setAttribute('class', 'text-box');
+    newBox.setAttribute('id', 'tag');
+    newBox.setAttribute('name', 'tag-form');
+    newBox.setAttribute('type', 'text');
+    
+    myAddButton.insertAdjacentElement('beforebegin', newBox);
+}
+
+/**
+ * Add another user as a TrailMate.
+ */
+function addTrailMate() {
+
 }
