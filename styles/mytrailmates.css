@@ -3,12 +3,43 @@ h3 {
   justify-content: center;
 }
 
+.contact-card {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.profile-anchor {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: #888888 1px solid;
+  border-radius: 25px;
+  min-width: 300px;
+  padding: 20px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+
+.user-image {
+  border-radius: 50%;
+}
+
+.user-name {
+  padding-left: 50px;
+  text-align: right;
+  align-self: center;
+  color: black;
+}
+
 .searchbar {
   padding: 6px;
   border: none;
-  margin-top: 8px;
-  margin-right: 16px;
-  margin-bottom: 8px;
+  margin: 8px 16px;
   font-size: 17px;
 
 }
@@ -29,7 +60,6 @@ section {
 .searchbar {
   display: flex;
   justify-content: center;
-  
 }
 
 .card-body {

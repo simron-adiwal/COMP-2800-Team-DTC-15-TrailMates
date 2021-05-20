@@ -18,8 +18,7 @@ function loadUserFriends(user) {
             console.log(frienddata.name);
         });
     });
-
-};
+}
 
 
 //db.collection("users").doc(user.uid)
