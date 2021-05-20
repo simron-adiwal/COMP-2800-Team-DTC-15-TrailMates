@@ -1,5 +1,5 @@
 // Get target userID
-// ./user.html?userid=<targeted-user-id>
+// URL id = ./user.html?userid=<targeted-user-id>
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const otherUser = urlParams.get('userid')
@@ -29,11 +29,11 @@ firebase.auth().onAuthStateChanged(user => {
         });
     }
 });
-// Add TrailMate
+// Add TrailMate Listener
 let addMateButton = document.getElementById('add-trailmate');
 addMateButton.addEventListener('click', addTrailMate)
 
-// Add Rep
+// Add Rep Listener
 let addRepButton = document.getElementById('give-rep');
 addRepButton.addEventListener('click', addRep)
 

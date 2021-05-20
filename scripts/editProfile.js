@@ -1,8 +1,3 @@
-// Add Tags
-let myAddButton = document.getElementById('add-tags');
-
-myAddButton.addEventListener('click', addTagBox);
-
 // Firebase Authorization
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -12,6 +7,10 @@ firebase.auth().onAuthStateChanged(user => {
         });
     }
 });
+
+// Add Tags Listener
+let myAddButton = document.getElementById('add-tags');
+myAddButton.addEventListener('click', addTagBox);
 
 // Functions
 /**

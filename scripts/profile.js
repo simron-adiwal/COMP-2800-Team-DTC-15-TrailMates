@@ -1,12 +1,4 @@
-/* Sample firebase read (from Google)
-var starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
-starCountRef.on('value', (snapshot) => {
-    const data = snapshot.val();
-    updateStarCount(postElement, data);
-});
- */
-
-// Identifiers for key elements
+// Assign HTML ID Selectors
 const name = $('#profileName');
 const age = $('#profileAge');
 const gender = $('#profileGender');
@@ -27,11 +19,10 @@ firebase.auth().onAuthStateChanged(user => {
 
 // Functions
 /**
- *  Load the user's data to the profile page.
+ * Load the user's data to the profile page.
  * @param user
  */
 function loadUserProfile(user) {
-    console.log(user);
     name.text(user.name);
     name.attr('style', 'color: black;')
     age.text(user.age);
@@ -50,7 +41,6 @@ function loadUserProfile(user) {
  * @param user
  */
 function addTags(user) {
-    console.log(user.tags);
     user.tags.forEach((tag) => {
         let newdiv = document.createElement('div');
         newdiv.setAttribute('class', 'tagCard');
