@@ -3,11 +3,6 @@ let myAddButton = document.getElementById('add-tags');
 
 myAddButton.addEventListener('click', addTagBox);
 
-// Add TrailMate
-let addMateButton = document.getElementById('add-trailmate');
-
-addMateButton.addEventListener('click', addTrailMate)
-
 // Firebase Authorization
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -63,11 +58,4 @@ function addTagBox() {
     newBox.setAttribute('type', 'text');
     
     myAddButton.insertAdjacentElement('beforebegin', newBox);
-}
-
-/**
- * Add another user as a TrailMate.
- */
-function addTrailMate() {
-
 }
