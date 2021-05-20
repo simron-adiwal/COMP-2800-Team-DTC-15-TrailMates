@@ -13,17 +13,13 @@ const hikes = $('#profileHikes');
 const rep = $('#profileRep');
 const bio = $('#profileBio');
 
-let lUser;
-
 // Firebase Authorization
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
-        // userId = user.uid;
         let loggedUserData;
         let targetUserData;
         db.collection("users").doc(user.uid).get().then(function(user) {
             loggedUserData = user.data();
-            lUser = user.uid;
             console.log(loggedUserData);
             db.collection("users").doc(otherUser).get().then(function(user) {
                 targetUserData = user.data();
@@ -33,7 +29,6 @@ firebase.auth().onAuthStateChanged(user => {
         });
     }
 });
-
 // Add TrailMate
 let addMateButton = document.getElementById('add-trailmate');
 addMateButton.addEventListener('click', addTrailMate)
@@ -42,7 +37,7 @@ addMateButton.addEventListener('click', addTrailMate)
 let addRepButton = document.getElementById('give-rep');
 addRepButton.addEventListener('click', addRep)
 
-// Functions
+// Functions TODO: Remove console logs
 /**
  *  Load the user's data to the profile page.
  * @param loggedUserData
