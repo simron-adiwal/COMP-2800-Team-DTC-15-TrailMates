@@ -233,19 +233,20 @@ main {
     text-align: center;
 }
 
-#add-trailmate {
+#add-trailmate, #give-rep {
     border: 1px solid black;
     border-radius: 25px;
     background-color: #ffffff;
     padding: 0 2vw;
+    margin-right: 5px;
+    font-size: 85%;
 }
 
-#add-trailmate:active, #add-trailmate:hover {
+#add-trailmate:active, #add-trailmate:hover, #give-rep:active, #give-rep:hover {
     border: none;
     background-color: #6abf40;
     color: white;
 }
-
 
 #extra-actions {
     border: solid 1px;
