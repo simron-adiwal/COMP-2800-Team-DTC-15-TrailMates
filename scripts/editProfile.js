@@ -43,7 +43,6 @@ function loadUserData(user) {
     if (user.linkSnapchat) {
         $('#snapchat-link').attr('value', user.linkSnapchat);
     }
-    
 }
 
 /**
