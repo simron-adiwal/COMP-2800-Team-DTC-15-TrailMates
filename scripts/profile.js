@@ -1,11 +1,4 @@
-/*
- * profile.js
- *
- * JavaScript file containing scripts for editing the profile page
- *
-*/
-
-/* Example firebase read
+/* Sample firebase read (from Google)
 var starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
 starCountRef.on('value', (snapshot) => {
     const data = snapshot.val();
@@ -13,6 +6,7 @@ starCountRef.on('value', (snapshot) => {
 });
  */
 
+// Identifiers for key elements
 const name = $('#profileName');
 const age = $('#profileAge');
 const gender = $('#profileGender');
@@ -21,6 +15,7 @@ const hikes = $('#profileHikes');
 const rep = $('#profileRep');
 const bio = $('#profileBio');
 
+// Firebase Authorization
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         // userId = user.uid;
@@ -30,6 +25,11 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
+// Functions
+/**
+ *  Load the user's data to the profile page.
+ * @param user
+ */
 function loadUserProfile(user) {
     console.log(user);
     name.text(user.name);
@@ -45,6 +45,10 @@ function loadUserProfile(user) {
     emptyLinks(user);
 }
 
+/**
+ * Create and append the user's tags.
+ * @param user
+ */
 function addTags(user) {
     console.log(user.tags);
     user.tags.forEach((tag) => {
@@ -58,6 +62,10 @@ function addTags(user) {
     });
 }
 
+/**
+ * Remove any unlinked social media accounts.
+ * @param user
+ */
 function emptyLinks(user) {
     if (!(user.linkFacebook)) {
         $('#profileFacebook').remove();
@@ -71,8 +79,4 @@ function emptyLinks(user) {
     if (!(user.linkSnapchat)) {
         $('#profileSnapchat').remove();
     }
-}
-
-function writeProfile(user) {
-    const profileDoc = db.collection("users").doc(user.uid)
 }
