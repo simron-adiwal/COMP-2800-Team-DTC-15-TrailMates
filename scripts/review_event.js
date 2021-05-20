@@ -1,5 +1,5 @@
 console.log("hellodsfioajs")
-
+console.log(doc_ID)
 // firebase.auth().onAuthStateChanged(user => {
 //     if (user) {
 //         // userId = user.uid;
@@ -26,25 +26,19 @@ console.log("hellodsfioajs")
                 doc => {
                     const data1 = doc.data();
                     console.log(data1)
-                    $("#hike-title-heading").html(data1.Name)
-                    $("#main-img").attr("src", data1.imgsrc)
-                    $("#map-img").attr("src", data1.mapsrc)
-                    $("#image-caption").html(data1.ImageCaption)
-                    $("#map-caption").html(data1.MapCaption)
-                    $("#description-value").html(data1.Description)
+                    $("#time_span").html(data1.Start)
+                    $("#event_name_span").html(data1.EventName)
+                    $("#hike_name_span").html(data1.HikeName)
+                    $("#public_or_private_span").html(data1.PublicOrPrivate)
+                    $("#meetup_span").html(data1.Meetup)
+                    $("#length_span").html(data1.Length)
+                    $("#description_span").html(data1.Description)
                     $("#accessibility-value").html(data1.Accessibility)
                     $("#location-value").html(data1.location)
                     $("#length-value").html(data1.Length)
                     $("#difficulty-value").html(data1.difficulty)
-                    for (i = 0; i < data1.conditions.length; i++) {
-                        console.log(i)
-                        console.log(data1.conditions[i])
-                        $("#conditions-list").append("<li>" + data1.conditions[i] + "</li>")
-
-                    }
-                    // $("#conditions-list").html("<li>" + data1.conditions[i] +  "</li>")
                 }
             )
-        // })
     };
-    hikeQuery()
+    eventQuery()
+console.log("123")
