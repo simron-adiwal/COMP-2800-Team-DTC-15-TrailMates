@@ -25,6 +25,9 @@ function eventQuery() {
                 querySnapshot.forEach(function(doc) {
                     // doc.data() is never undefined for query doc snapshots
                     console.log(doc.id, " => ", doc.data());
+                    console.log(doc.data().HikeName)
+                    new_div = document.createElement("div").setAttribute("class", "card");
+                    document.appendChild(new_div)
                 });
             });
         }
