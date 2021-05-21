@@ -14,6 +14,7 @@ let doc_ID = "blah"
 console.log("Document written with ID: ", doc_ID);
 
 function eventCreate() {
+    
     db.collection("events").add(
         {
             Description: $("#hike_desc").val(),
@@ -33,7 +34,7 @@ function eventCreate() {
 }
 
 
-function radioHandling(){
+function radioHandling() {
     // if ($(".public").checked) {
     //     console.log('public event only')
     // } else if ($(".private").checked) {
@@ -49,11 +50,29 @@ radioHandling();
 
 // eventCreate();
 $("#create-button").click(function () {
-    eventCreate();
-    $("body").html('<body> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> <script src="scripts/index.js"></script> <script src="scripts/landingpage.js"></script> <div id="mySidenav" class="sidenav"> <a href="profile.html">Profile</a> <a href="mytrailmates.html">My TrailMates</a> <a href="#">Create Event</a> <a href="#">Find new TrailMates</a> <a href="aboutus.html">About Us</a> <a href="hikesearch.html">Search Hikes</a> <a href="login.html">Sign out</a> </div><header> <p><span id="menu-button" onclick="openClose()"> &#9776; </span></p><div style="text-align: center"> <a href="landingpage.html"> <img alt="Help" id="logo" src="./images/TrailMates-white.png"> </a> </div></header> <h1>Review Details</h1> <div id="photo_div"> <img src="https://via.placeholder.com/250" alt=""> <p> <span id="time_span">Time and Date</span> </p></div><div id="text_div"> <h3>"<span id="event_name_span">CST T1 Survived</span>" Hike</h3> <h5><span id="hike_name_span">Garibaldi Lake</span></h5> <p><span id="public_or_private_span">Private</span></p><br><p> <strong>Meetup Location: </strong> <span id="meetup_span">Canada Place</span> </p><p> <strong>Length: </strong> <span id="length_span">8km</span> </p><br><h3>Description</h3> <p><span id="description_span">Hike to celebrate completing T1 successfully!</span></p></div><div> <button>Edit Event</button> <button>Publish Event</button> </div></body>')
-    // window.location.replace("review_event.html");
-    console.log("hellodsfioajs")
-    console.log(doc_ID)
+    
+    if ($("#event_name").val().length != 0 & $("#hike_name").val().length != 0 & $("#start_time").val().length != 0 & $("#hike_length").val().length != 0) {
+        eventCreate();
+        $("body").html('<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> <script src="scripts/index.js"></script> <script src="scripts/landingpage.js"></script> <div id="mySidenav" class="sidenav"> <a href="profile.html">Profile</a> <a href="mytrailmates.html">My TrailMates</a> <a href="#">Create Event</a> <a href="#">Find new TrailMates</a> <a href="aboutus.html">About Us</a> <a href="hikesearch.html">Search Hikes</a> <a href="login.html">Sign out</a> </div><header> <p><span id="menu-button" onclick="openClose()"> &#9776; </span></p><div style="text-align: center"> <a href="landingpage.html"> <img alt="Help" id="logo" src="./images/TrailMates-white.png"> </a> </div></header> <h1 id="review_details_header">Review Details</h1> <div id="photo_div"> <img src="https://via.placeholder.com/250" alt=""> <p> <span id="time_span">Time and Date</span> </p></div><div id="text_div"> <h3>"<span id="event_name_span">CST T1 Survived</span>" Hike</h3> <h5><span id="hike_name_span">Garibaldi Lake</span></h5> <p><span id="public_or_private_span">Private</span></p><br><p> <strong>Meetup Location: </strong> <span id="meetup_span">Canada Place</span> </p><p> <strong>Length: </strong> <span id="length_span">8km</span> </p><br><h3>Description</h3> <p><span id="description_span">Hike to celebrate completing T1 successfully!</span></p></div><div> <button id="edit_event_button">Edit Event</button> <button id="publish_event_button">Publish Event</button> </div>')
+        // window.location.replace("review_event.html");
+        console.log("hellodsfioajs")
+        console.log(doc_ID)
+            .then(function (docRef) {
+                console.log("item added");
+                doc_ID = String(docRef.id);
+                console.log("Document written with ID: ", doc_ID);
+            })
+    } else {
+        console.log('sorryyyy')
+    }
+
+
+
+    // eventCreate();
+    // $("body").html('<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> <script src="scripts/index.js"></script> <script src="scripts/landingpage.js"></script> <div id="mySidenav" class="sidenav"> <a href="profile.html">Profile</a> <a href="mytrailmates.html">My TrailMates</a> <a href="#">Create Event</a> <a href="#">Find new TrailMates</a> <a href="aboutus.html">About Us</a> <a href="hikesearch.html">Search Hikes</a> <a href="login.html">Sign out</a> </div><header> <p><span id="menu-button" onclick="openClose()"> &#9776; </span></p><div style="text-align: center"> <a href="landingpage.html"> <img alt="Help" id="logo" src="./images/TrailMates-white.png"> </a> </div></header> <h1 id="review_details_header">Review Details</h1> <div id="photo_div"> <img src="https://via.placeholder.com/250" alt=""> <p> <span id="time_span">Time and Date</span> </p></div><div id="text_div"> <h3>"<span id="event_name_span">CST T1 Survived</span>" Hike</h3> <h5><span id="hike_name_span">Garibaldi Lake</span></h5> <p><span id="public_or_private_span">Private</span></p><br><p> <strong>Meetup Location: </strong> <span id="meetup_span">Canada Place</span> </p><p> <strong>Length: </strong> <span id="length_span">8km</span> </p><br><h3>Description</h3> <p><span id="description_span">Hike to celebrate completing T1 successfully!</span></p></div><div> <button id="edit_event_button">Edit Event</button> <button id="publish_event_button">Publish Event</button> </div>')
+    // // window.location.replace("review_event.html");
+    // console.log("hellodsfioajs")
+    // console.log(doc_ID)
     // firebase.auth().onAuthStateChanged(user => {
     //     if (user) {
     //         // userId = user.uid;
@@ -67,7 +86,16 @@ $("#create-button").click(function () {
 
     setTimeout(eventQuery, 500);
 
-
+    $("#publish_event_button").click(function () {
+        // eventCreate();
+        // $("body").html('<body> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> <script src="scripts/index.js"></script> <script src="scripts/landingpage.js"></script> <div id="mySidenav" class="sidenav"> <a href="profile.html">Profile</a> <a href="mytrailmates.html">My TrailMates</a> <a href="#">Create Event</a> <a href="#">Find new TrailMates</a> <a href="aboutus.html">About Us</a> <a href="hikesearch.html">Search Hikes</a> <a href="login.html">Sign out</a> </div><header> <p><span id="menu-button" onclick="openClose()"> &#9776; </span></p><div style="text-align: center"> <a href="landingpage.html"> <img alt="Help" id="logo" src="./images/TrailMates-white.png"> </a> </div></header> <h1 id="review_details_header">Review Details</h1> <div id="photo_div"> <img src="https://via.placeholder.com/250" alt=""> <p> <span id="time_span">Time and Date</span> </p></div><div id="text_div"> <h3>"<span id="event_name_span">CST T1 Survived</span>" Hike</h3> <h5><span id="hike_name_span">Garibaldi Lake</span></h5> <p><span id="public_or_private_span">Private</span></p><br><p> <strong>Meetup Location: </strong> <span id="meetup_span">Canada Place</span> </p><p> <strong>Length: </strong> <span id="length_span">8km</span> </p><br><h3>Description</h3> <p><span id="description_span">Hike to celebrate completing T1 successfully!</span></p></div><div> <button id="edit_event_button">Edit Event</button> <button id="publish_event_button">Publish Event</button> </div></body>')
+        console.log('hihihihi');
+        window.location.replace("landingpage.html");
+        setTimeout(eventQuery, 500);
+    
+    
+    
+    });
 
 });
 
@@ -126,3 +154,4 @@ function eventQuery() {
 
 console.log("123")
 console.log(doc_ID)
+
