@@ -52,17 +52,32 @@
     </header>
 
     <div class="wrap">
-        <div>
-            <h3>My TrailMates</h3>
-        </div>
-
+        <h3>My TrailMates</h3>
         <div class='searchbar'>
-            <input type="text" placeholder="Search">
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <label for="search"></label>
+            <input id="search" type="text" placeholder="Search">
+            <button type="submit" id='submit'><i class="fa fa-search"></i></button>
         </div>
     </div>
 
-    <section>
+    
+    <section id="friend">
+       <!--
+        <a href="profile.html" class="profile-anchor">
+            <div class="contact-card">
+            <img src="https://randomuser.me/api/portraits/thumb/men/45.jpg" alt="User Image Here" class="user-image">
+            <h5 class="user-name">Jason Banh</h5>
+            </div>
+        </a>
+        <a href="profile.html" class="profile-anchor">
+            <div class="contact-card">
+                <img src="https://randomuser.me/api/portraits/thumb/women/45.jpg" alt="User Image Here" class="user-image">
+                <h5 class="user-name">Raphael Ambrosius Cousteau</h5>
+            </div>
+        </a>
+        -->
+
+        <!--
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
@@ -122,8 +137,7 @@
                 </div>
             </div>
         </div>
-
-
+        -->
     </section>
 
 
@@ -132,12 +146,30 @@
 
 <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-<script src="scripts/team-15-api-key.js"></script>
 
 <script src="scripts/loggedStatus.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    let firebaseConfig = {
+        apiKey: "AIzaSyAPes5NkunBodm_wtBsW8b-78t8jNfhsgE",
+        authDomain: "trailmates-657f0.firebaseapp.com",
+        projectId: "trailmates-657f0",
+        storageBucket: "trailmates-657f0.appspot.com",
+        messagingSenderId: "877707794753",
+        appId: "1:877707794753:web:a9ee3826e467041bed69c0"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+</script>
+<script src="scripts/mytrailmates.js"></script>
 </html>
