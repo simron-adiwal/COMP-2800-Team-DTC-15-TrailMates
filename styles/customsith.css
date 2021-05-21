@@ -1,0 +1,103 @@
+body {
+  background-color: #2d0303;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 99;
+  top: 75px;
+  left: 0;
+  background-color: #651515;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 0;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 24px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #eeeeee;
+  display: block;
+  transition: 0.3s;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+#extra-actions {
+  background-color: #613838;
+}
+
+.sidenav a:nth-child(2n+1) {
+  background-color: #4c0505;
+}
+
+.sidenav a:active, .sidenav a:hover {
+  color: white;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+header {
+  position: fixed;
+  top: 0;
+  height: 60px;
+  background-color: #4c0505;
+  z-index: 96;
+}
+
+#menu-button {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  top: 15px;
+  margin-left: 20px;
+  z-index: 98;
+  font-size: 30px;
+  cursor: pointer;
+
+}
+
+header div {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  height: 75px;
+  background-color: #651515;
+  text-align: center;
+  z-index: 97;
+}
+
+header div a {
+  display: flex;
+  align-self: center;
+  width: 150px;
+  z-index: 98;
+}
+
+#logo {
+  align-self: center;
+  width: 150px
+}
+
+    /* Side Nav CSS */
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 75px;
+}
+
+.scroll-test-filler {
+  height: 1000px;
+}

@@ -81,6 +81,9 @@ function submitProfile() {
     newTags.forEach((item) => {
         if (item.value!=="") {
             newTagValues.push(item.value);
+            if (item.value.toLowerCase()==="the chosen one") {
+                window.location.href = "thechosenone.html"
+            }
         }
     });
 
