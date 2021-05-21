@@ -9,7 +9,7 @@ firebase.auth().onAuthStateChanged(user => {
     else console.log("Authentication failed.");
 });
 
-
+/** Read firebase and add friends into the section.  */
 function loadUserFriends(user) {
     console.log(user.friendslist)
 
@@ -51,6 +51,18 @@ names.setAttributeNode(att4);
 let t = document.createTextNode("friendlistname");
 names.appendChild(t);
 
+
+/** Initialize search bar. */
+function getFriend(){
+    document.getElementById("submit").addEventListener('click', function () {
+        var friend = document.getElementById("search").value;
+        console.log(friend);
+
+        db.collection("users").doc(friend).get().then(function (frienduser) {
+            let frienddata = frienduser.data();
+            console.log(frienddata.name);
+    })
+}
 
 
 
