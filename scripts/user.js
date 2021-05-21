@@ -132,4 +132,4 @@ function addRep() {
             })
         }
     });
-}
+} // TODO: Make rep a toggle, rather than just 1 permanent increase.
