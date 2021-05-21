@@ -26,4 +26,8 @@ body{
 
 .search-hikes {
     border-radius: 25px;
+    outline: none;
+    padding-left: 10px;
+    min-width: 300px;
 }
+
