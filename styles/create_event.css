@@ -1,0 +1,56 @@
+#create-event {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    min-width: 300px;
+    background-color: #cbdcbd;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.form-header {
+    border-radius: 25px;
+    padding: 5px 0 5px 8px;
+    margin-top: 5px;
+}
+
+.form-input {
+    margin-left: 5px;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    border: 1px solid black;
+    min-width: 300px;
+}
+
+#create-header {
+    display: flex;
+    justify-content: center;
+}
+
+#create-cancel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.create-event-buttons {
+    border-radius: 25px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.create-event-buttons:hover, .create-event-buttons:active {
+    background-color: #6ABF40;
+    color: white;
+}
+
+#cancel-button {
+    margin-right: 10px;
+}
+
+#create-button {
+    margin-right: 10px;
+}
+

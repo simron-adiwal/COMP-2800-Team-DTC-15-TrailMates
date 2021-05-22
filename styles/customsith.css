@@ -1,3 +1,7 @@
+body {
+  background-color: #2d0303;
+}
+
 .sidenav {
   height: 100%;
   width: 0;
@@ -5,7 +9,7 @@
   z-index: 99;
   top: 75px;
   left: 0;
-  background-color: #6ABF40;
+  background-color: #651515;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 0;
@@ -15,7 +19,7 @@
   padding: 8px 8px 8px 24px;
   text-decoration: none;
   font-size: 20px;
-  color: #000000;
+  color: #eeeeee;
   display: block;
   transition: 0.3s;
   overflow: hidden;
@@ -23,8 +27,12 @@
   white-space: nowrap;
 }
 
+#extra-actions {
+  background-color: #613838;
+}
+
 .sidenav a:nth-child(2n+1) {
-  background-color: #60AC39;
+  background-color: #4c0505;
 }
 
 .sidenav a:active, .sidenav a:hover {
@@ -40,7 +48,7 @@ header {
   position: fixed;
   top: 0;
   height: 60px;
-  background-color: #6ABF40;
+  background-color: #4c0505;
   z-index: 96;
 }
 
@@ -65,7 +73,7 @@ header div {
   align-content: center;
   flex-direction: column;
   height: 75px;
-  background-color: #6ABF40;
+  background-color: #651515;
   text-align: center;
   z-index: 97;
 }
