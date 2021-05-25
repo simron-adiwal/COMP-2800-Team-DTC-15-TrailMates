@@ -53,14 +53,15 @@ names.appendChild(t);
 
 
 /** Initialize search bar. */
-function getFriend(){
+function getFriend() {
     document.getElementById("submit").addEventListener('click', function () {
-        var friend = document.getElementById("search").value;
-        console.log(friend);
-
-        db.collection("users").doc(friend).get().then(function (frienduser) {
-            let frienddata = frienduser.data();
-            console.log(frienddata.name);
+            let friend = document.getElementById("search").value;
+            console.log(friend);
+    
+            db.collection("users").doc(friend).get().then(function (friendUser) {
+                let friendData = friendUser.data();
+                console.log(friendData.name);
+        })
     })
 }
 
