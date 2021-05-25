@@ -61,7 +61,7 @@ function getFriend(){
 
       db.collection("users").doc(friend).get().then
       if (fri in db.collection("users").doc(friend) ) {
-        window.location.href = profile.html
+        location.href="profile.html";
       } else {console.log("No data")};
 
       //db.collection("users").doc(friend).get().then(function (frienduser) {
