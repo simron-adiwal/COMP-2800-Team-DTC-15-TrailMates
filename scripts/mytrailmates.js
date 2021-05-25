@@ -52,18 +52,23 @@ let t = document.createTextNode("friendlistname");
 names.appendChild(t);
 
 
+
 /** Initialize search bar. */
 function getFriend(){
-    document.getElementById("submit").addEventListener('click', function () {
-        var friend = document.getElementById("search").value;
-        console.log(friend);
+  document.getElementById("submit").addEventListener('click', function () {
+      var fri = document.getElementById("search").value;
+      console.log(fri);
 
-        db.collection("users").doc(friend).get().then(function (frienduser) {
-            let frienddata = frienduser.data();
-            console.log(frienddata.name);
-    })
+      db.collection("users").doc(friend).get().then
+      if (fri in db.collection("users").doc(friend) ) {
+        window.location.href = profile.html
+      } else {console.log("No data")};
+
+      //db.collection("users").doc(friend).get().then(function (frienduser) {
+           //var frienddata = frienduser.data();
+           //console.log(frienddata.name);
+  })
 }
-
 
 
 
