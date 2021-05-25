@@ -11,6 +11,7 @@ const gender = $('#profileGender');
 const joined = $('#profileJoined');
 const hikes = $('#profileHikes');
 const rep = $('#profileRep');
+const repBadge = $('#badge');
 const bio = $('#profileBio');
 
 // Firebase Authorization
