@@ -19,7 +19,25 @@ function eventQuery() {
                     $("body").append('<div class="card" style="width: 18rem;"> <div class="card-body card-background-img"> <h5 class="card-title eventName"> <strong>' + doc.data().EventName+ '</strong></h5> <p class="card-text difficulty"><strong>'+ doc.data().Start +'</strong> </p><a href="#" class="card-link length a-card"><strong>'+ doc.data().Length +'</strong> </a> <strong><a id="'+ doc.id+'_join_button" class="card-link createEvent a-card">Join Event</a></strong> </div></div>')
                     $(`#${doc.id}_join_button`).click(function() {
                         console.log(doc.id)
-                        window.location.replace('eventcard.html')
+                        setTimeout(eventCardLoad, 500)
+                        // window.location.assign('eventcard.html')
+                        $("body").html(`<div id="mySidenav" class="sidenav"> <a href="profile.html">Profile</a> <a href="mytrailmates.html">My TrailMates</a> <a href="#">Create Event</a> <a href="#">Find new TrailMates</a> <a href="aboutus.html">About Us</a> <a href="hikesearch.html">Search Hikes</a> <a href="login.html">Sign out</a> </div><header> <p><span id="menu-button" onclick="openClose()"> &#9776; </span></p><div style="text-align: center"> <a href="landingpage.html"> <img alt="Help" id="logo" src="./images/TrailMates-white.png"> </a> </div></header> <h1 id="event-title-heading"></h1> <h6 id="start-time">June 4th at 12pm</h6> <h6 id="public-or-private">Public</h6> <a id="a-buttons"> <span id="going-btn">I'm going</span> <span id="invite-btn">Invite Trailmates</span> </a> <img id="hike-preview-img" src="" alt="Hike Image"> <div id="users-attending"> <img src=""> </div> <p id="description-p"></p>`)
+                        console.log(doc.id)
+                        function eventCardLoad() {
+                            db.collection('events').doc(doc.id)
+                                .get()
+                                .then(
+                                    doc => {
+                                        const data1 = doc.data();
+                                        console.log(data1)
+                                        $("#event-title-heading").html(data1.EventName)
+                                        $("#start-time").html(data1.Start)
+                                        $("#public-or-private").html(data1.EventType + " Event")
+                                        $("#description-p").html(data1.Description)
+                                    }
+                                )
+                        };
+                        setTimeout(eventCardLoad, 3500)
                     })
                 });
             });
@@ -29,24 +47,35 @@ eventQuery()
 
 
 
-// eventCreate();
-$("#create-button").click(function () {
+    // function eventCardLoad() {
+    //     db.collection('events').doc(doc.id)
+    //         .get()
+    //         .then(
+    //             doc => {
+    //                 const data1 = doc.data();
+    //                 console.log(data1)
+    //                 $("#event-title-heading").html(data1.EventName)
+    //                 $("#start-time").html(data1.Start)
+    //                 $("#public-or-private").html(data1.EventType)
+
+                  
+    //             }
+    //         )
+    // };
+    
 
 
-    eventCreate();
-    $("body").html('<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> <script src="scripts/index.js"></script> <script src="scripts/landingpage.js"></script> <div id="mySidenav" class="sidenav"> <a href="profile.html">Profile</a> <a href="mytrailmates.html">My TrailMates</a> <a href="#">Create Event</a> <a href="#">Find new TrailMates</a> <a href="aboutus.html">About Us</a> <a href="hikesearch.html">Search Hikes</a> <a href="login.html">Sign out</a> </div><header> <p><span id="menu-button" onclick="openClose()"> &#9776; </span></p><div style="text-align: center"> <a href="landingpage.html"> <img alt="Help" id="logo" src="./images/TrailMates-white.png"> </a> </div></header> <h1 id="review_details_header">Review Details</h1> <div id="photo_div"> <img src="https://via.placeholder.com/250" alt=""> <p> <span id="time_span">Time and Date</span> </p></div><div id="text_div"> <h3>"<span id="event_name_span">CST T1 Survived</span>" Hike</h3> <h5><span id="hike_name_span">Garibaldi Lake</span></h5> <p><span id="public_or_private_span">Private</span></p><br><p> <strong>Meetup Location: </strong> <span id="meetup_span">Canada Place</span> </p><p> <strong>Length: </strong> <span id="length_span">8km</span> </p><br><h3>Description</h3> <p><span id="description_span">Hike to celebrate completing T1 successfully!</span></p></div><div> <button id="edit_event_button">Edit Event</button> <button id="publish_event_button">Publish Event</button> </div>')
-    // window.location.replace("review_event.html");
-    console.log("hellodsfioajs")
-    console.log(doc_ID)
 
 
 
-    setTimeout(eventQuery, 500);
 
-    $("#publish_event_button").click(function () {
-        console.log('hihihihi');
-        window.location.replace("landingpage.html");
-        setTimeout(eventQuery, 1200);
-    });
 
-});
+
+
+
+
+
+
+
+
+

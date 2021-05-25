@@ -1,105 +1,43 @@
-.search-container{
+#event-title-heading {
     text-align: center;
-    margin-top: 3%;
 }
 
-.card {
-    /* color: red; */
-    /* background-image: url(https://firebasestorage.googleapis.com/v0/b/trailmates-657f0.appspot.com/o/Garibaldi%2FGaribaldi%2FGaribaldiLake-PanoramaRidge.jpeg?alt=media&token=58476a8d-c68c-4fd7-9242-3328c860a14a);  */
-    /* background-size: cover;  */
-    /* background-blend-mode: lighten;  */
-    /* opacity: 50%; */
-    margin: auto;
-    margin-top: 5%;
-    width: 90vw;
-    height: 25vh;
+#going-btn {
+    padding: 2%;
+    border: 1px solid black;
+    /* margin-left: 10%; */
+    border-radius: 25%;
+    background-color: #6abf40;
+}
+#invite-btn {
+    padding: 2%;
+    /* position: absolute; */
+    /* right: 0; */
+    /* margin-right: 10%; */
+    border: 1px solid black;
+    border-radius: 25%;
+    background-color: #6abf40;
+}
+#a-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 5% 2%;
 }
 
-.card-background-img::before {
-    content: "";
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/trailmates-657f0.appspot.com/o/Garibaldi%2FGaribaldi%2FGaribaldiLake-PanoramaRidge.jpeg?alt=media&token=58476a8d-c68c-4fd7-9242-3328c860a14a');
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0.50;
+#hike-preview-img {
+    content: url("https://firebasestorage.googleapis.com/v0/b/trailmates-657f0.appspot.com/o/Garibaldi%2FGaribaldi%2FGaribaldiLake-PanoramaRidge.jpeg?alt=media&token=58476a8d-c68c-4fd7-9242-3328c860a14a");   
 }
 
-
-.card-title.hikeName {
-    position: relative;
-    color: black;  
-    /* font-size: 14rem; */
-    line-height: 0.9;
-    text-align: left;
+#description-p {
+    margin: 2% 2%;
+    padding: 5% 5%;
+    border: 1px solid black;
 }
 
-
-
-
-.card-body  p {
-    position: relative;
-    color: black;  
-    /* font-size: 14rem; */
-    line-height: 0.9;
-    text-align: left;
+#start-time {
+    margin: 2% 5%;
 }
 
-
-
-.a-card {
-    position: relative;
-    color: black;  
-    /* font-size: 14rem; */
-    line-height: 0.9;
-    text-align: left;
-}
-
-
-
-.hikeName {
-    /* right: 35%; */
-    font-size: 1.3em;
-}
-
-.difficulty {
-    font-size: 0.8em;
-    /* right: 10px */
-}
-
-.length {
-    font-size: 0.8em;
-}
-
-
-.tunnel-bluffs::before {
-    background-image: url('https://images.dailyhive.com/20200731115008/Tunnel-Bluffs-view.jpg');
-}
-
-
-.hikeDetails {
-    /* display: flex; */
-    /* justify-content: right; */
-    /* margin-left: 200px; */
-    /* margin-top: 70px; */
-    text-align: right;
-    left: 10px;
-    color: rgb(217, 255, 0);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: 3%;
-
-}
-
-.card-link.createEvent.a-card {
-    color: rgb(217, 255, 0);
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 3%;
-    /* bottom: 30px; */
-    /* right: 25px; */
+#public-or-private {
+    margin: 2% 5%;
 }
