@@ -3,6 +3,9 @@ div {
 border: black solid
 }
 */
+body {
+    margin-top: 100px;
+}
 
 main {
     display: flex;
@@ -128,11 +131,18 @@ main {
 
 .tags .tagCard {
     text-align: center;
-    border: 2px solid #a4a4a4;
+    border: 1px solid black;
     border-radius: 20px;
-    box-shadow: 0 5px 5px #a4a4a4;
-    padding: 6px 4px 1px 4px;
+    box-shadow: 0 3px 3px #a4a4a4;
+    padding: 6px 10px 1px 8px;
     margin-bottom: 1vw;
+}
+
+.tags .tagCard:active, .tags .tagCard:hover {
+    border: none;
+    background-color: #6abf40;
+    color: white;
+    cursor: pointer;
 }
 
 .tags .tagCard h6 {
@@ -163,7 +173,7 @@ main {
     justify-self: center;
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 700px){
     .profileImages {
         display: grid;
         grid-template-columns: repeat(2, 300px);
@@ -171,7 +181,7 @@ main {
         grid-gap: 2vw;
         padding-top: 2vw;
         margin: auto;
-        max-width: 600px;
+        max-width: 700px;
     }
 }
 
@@ -205,6 +215,10 @@ main {
     display: flex;
 }
 
+.iconify:hover {
+    color: black;
+}
+
 #avatar {
     display: flex;
     flex-direction: column;
@@ -219,16 +233,44 @@ main {
     text-align: center;
 }
 
-#add-trailmate {
+#add-trailmate, #give-rep {
+    border: 1px solid black;
     border-radius: 25px;
     background-color: #ffffff;
     padding: 0 2vw;
+    margin-right: 5px;
+    font-size: 85%;
 }
 
-#dropdownMenuButton1 {
+#add-trailmate:active, #add-trailmate:hover, #give-rep:active, #give-rep:hover {
+    border: none;
+    background-color: #6abf40;
+    color: white;
+}
+
+#extra-actions {
     border: solid 1px;
     border-radius: 25px;
     align-content: center;
 }
 
+#extra-actions:active, #extra-actions:hover {
+    border: none;
+    background-color: #6abf40;
+    color: white;
+}
 
+#edit-profile-button {
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: #ffffff;
+    padding: 0 2vw;
+    margin-right: 5px;
+    font-size: 85%;
+}
+
+#edit-profile-button:active, #edit-profile-button:hover {
+    border: none;
+    background-color: #6abf40;
+    color: white;
+}
