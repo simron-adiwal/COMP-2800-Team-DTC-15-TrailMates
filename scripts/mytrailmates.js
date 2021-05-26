@@ -1,6 +1,6 @@
-const queryString = window.location.search
+const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const searchURLParam = urlParams.get('search').toLowerCase()
+const searchURLParam = urlParams.get('friends').toLowerCase();
 
 
 /** Firebase user athentication.  */
@@ -24,7 +24,10 @@ function loadUserFriends(user) {
         let currentFriend = friend;
         db.collection("users").doc(friend).get().then(function (frienduser) {
             let frienddata = frienduser.data();
-            if (frienddata.name.toLowerCase().includes(searchURLParam.toLowerCase())) {
+            console.log(frienddata.name.toLowerCase());
+            console.log(searchURLParam);
+            if (frienddata.name.toLowerCase().includes(searchURLParam)) {
+
                 console.log(`this is ${frienddata.name}`);
                 $("#friend").append('<a href="profile.html" class="profile-anchor"><div class="contact-card"> <img src="https://randomuser.me/api/portraits/thumb/men/45.jpg" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div>')
             }
