@@ -19,6 +19,7 @@ searchHikes()
  */
 function searchHikes() {
     events.get().then((eventQuery) => {
+        console.log("Got Events")
         eventQuery.forEach((document) => {
             if (document.data().Name.toLowerCase().includes(searchURLParam)) {
                 printEvents(document)
@@ -31,6 +32,8 @@ function searchHikes() {
                 $("body").append(` <div class="card" style="width: 18rem;"> <div class="card-body card-background-img tunnel-bluffs"> <h5 class="card-title hikeName"> <strong> ${document.data().Name} </strong></h5> <p class="card-text difficulty"><strong>Difficulty: ${document.data().difficulty} </strong> </p><a href="#" class="card-link length a-card"><strong>Length: ${document.data().Length} </strong></a> <strong> <a class="card-link hikeDetails a-card" href="hikedetail.html?docid=${document.data().Name}">Hike Details</a></strong> <strong><a class="card-link createEvent a-card" href="create_event.html">Create Event</a></strong> </div></div>`)
                 $(`#${event.id}_join_button`).click(function () {
                     setTimeout(eventCardLoad, 500)
+                    
+                    console.log("Card Load start")
                     function eventCardLoad() {
                         db.collection('events').doc(event.id)
                             .get()
