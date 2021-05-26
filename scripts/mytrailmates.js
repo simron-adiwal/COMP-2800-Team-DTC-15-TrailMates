@@ -20,6 +20,7 @@ function loadUserFriends(user) {
 
     let friendList = user.friendslist;
     friendList.forEach((friend) => {
+        console.log(friend);
         let currentFriend = friend;
         db.collection("users").doc(friend).get().then(function (frienduser) {
             let frienddata = frienduser.data();
