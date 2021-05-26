@@ -22,4 +22,13 @@ function randomBackground() {
     document.getElementById("landing-search").style.backgroundImage = "url('" + list[index] + "')";
 }
 
+function searchHike() {
+    let searchText = $('#search-hikes').val();
+    window.location.href = "hikesearch.html?search=" + searchText;
+}
+
 window.onload = randomBackground;
+
+let searchButton = $('.search-button');
+
+searchButton.click(searchHike);

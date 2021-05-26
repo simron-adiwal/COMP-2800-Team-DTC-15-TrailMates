@@ -9,14 +9,14 @@
         href="./images/trailmates_favicon.png" />
     <!-- Bootstrap CSS -->
 
-    <title>Search Hikes</title>
+    <title>Search User</title>
 </head>
 
 <!-- Bootstrap Scripts-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Our Scripts -->
@@ -27,6 +27,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./styles/hikesearch.css">
+<link rel="stylesheet" href="./styles/custom.css">
+<link rel="stylesheet" href="./styles/mytrailmates.css">
 
 <style>
     #hikeCard {
@@ -36,17 +38,17 @@
 </style>
 
 <body>
-    <!-- Side Nav -->
 
+    <!-- Side Nav -->
     <div id="mySidenav" class="sidenav">
         <a href="profile.html">Profile</a>
         <a href="mytrailmates.html">My TrailMates</a>
         <a href="eventsearch.html">Search Events</a>
         <a href="create_event.html">Create an Event</a>
-        <a href="#">Find new TrailMates</a>
+        <a href="usersearch.html">Find new TrailMates</a>
         <a href="aboutus.html">About Us</a>
         <a href="hikesearch.html">Search Hikes</a>
-        <a id="sign-out-user" style="cursor: pointer;" href="login.html">Sign out</a>
+        <a href="login.html">Sign out</a>
     </div>
 
     <header>
@@ -58,17 +60,16 @@
         </div>
     </header>
 
-
-
-
     <div class="search-container">
         <form>
-          <input type="text" name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
+            <label for="search-input"></label>
+        <input id="search-input" type="text"  name="search">
+        <button id="search-button" type="submit"><i class="fa fa-search"></i></button>
         </form>
-      </div>
+    </div>
 
-
+    <section id="friend">
+    </section>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -84,14 +85,15 @@
 
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
     <script src="scripts/team-15-api-key.js"></script>
-    <script src="scripts/index.js"></script>
-    <script src="scripts/hikesearch.js"></script>
+
+    <script src="scripts/usersearch.js"></script>
 </body>
+
 </html>

@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Our Scripts -->
 <script src="scripts/index.js"></script>
-<script src="scripts/hikedetail.js"></script>
 <link rel="stylesheet" href="./styles/custom.css">
 <link rel="stylesheet" href="./styles/hikedetail.css">
 <!-- jQuery CDN -->
@@ -39,8 +38,8 @@
 </style>
 
 <body>
-    <!-- Side Nav -->
 
+    <!-- Side Nav -->
     <div id="mySidenav" class="sidenav">
         <a href="profile.html">Profile</a>
         <a href="mytrailmates.html">My TrailMates</a>
@@ -54,22 +53,19 @@
 
     <header>
         <p><span id="menu-button" onclick="openClose()"> &#9776; </span></p>
-        <div style="text-align: center"> 
+        <div style="text-align: center">
             <a href="landingpage.html">
                 <img alt="Help" id="logo" src="./images/TrailMates-white.png">
             </a>
         </div>
     </header>
-    
-
-
 
     <div class="search-container">
-        <form action="/action_page.php">
-          <input type="text"  name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
+        <form>
+        <input id="search-input" type="text"  name="search">
+        <button id="search-button" type="submit"><i class="fa fa-search"></i></button>
         </form>
-      </div>
+    </div>
 
 
 
@@ -79,7 +75,7 @@
                 <p class="card-text difficulty"><strong>Difficulty: 4/5</strong> </p>
                 <a href="#" class="card-link length a-card"><strong>Length: 8km</strong> </a>
                 <strong> <a class="card-link hikeDetails a-card" href="hikedetail.html">Event Details</a></strong>
-                
+
             </div>
     </div>
 
@@ -90,11 +86,11 @@
             <p class="card-text difficulty"><strong>Difficulty: 3.5/5 </strong>  </p>
             <a href="#" class="card-link length a-card"><strong>Length: 11.5km </strong></a>
             <strong> <a class="card-link hikeDetails a-card" href="hikedetail.html">Event Details</a></strong>
-            
+
         </div>
     </div> -->
 
-    
+
 
 
 
@@ -112,88 +108,16 @@
 
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="scripts/team-15-api-key.js"></script>
 
-    <script>
-        // Your web app's Firebase configuration
-        // const firebase = require("firebase");
-        // require("firebase/firestore");
-
-        var firebaseConfig = {
-            apiKey: "AIzaSyAPes5NkunBodm_wtBsW8b-78t8jNfhsgE",
-            authDomain: "trailmates-657f0.firebaseapp.com",
-            projectId: "trailmates-657f0",
-            storageBucket: "trailmates-657f0.appspot.com",
-            messagingSenderId: "877707794753",
-            appId: "1:877707794753:web:a9ee3826e467041bed69c0"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-    </script>
-    <script>
-        $('.carousel').carousel({
-            interval: false
-        })
-
-        function hikeQuery() {
-            // firebase.auth().onAuthStateChanged(function (user) {
-            // console.log(db.collection('hikeDetails').doc('d').collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P'))
-
-
-            // UNCOMMENT THIS PART WHEN YOU COME BACK TO WORK ON GETTING CONTENT TO LOAD DYNAMICALLY
-
-            // db.collection('hikeDetails').get().then(function(querySnapshot) {
-            //     querySnapshot.forEach(function(doc) {
-            //         console.log(doc.id, " => ", doc.data());
-            //         $("#hikeCard").append("<p> Hellooo" + doc.data().Length + "</p>")
-            //         // $(hikeImg).attr("src", doc.data().imgsrc)
-            //         $("#hikeName").html(doc.data().Name)
-            //         $("#difficulty").html(doc.data().difficulty)
-            //         $("#duration").html(doc.data().Length)
-            //     })
-
-            // querySnapshot
-
-            // }
-            // )
-
-            // .collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P')
-            db.collection('hikeDetails').get()
-                .then(
-                    doc => {
-                        // console.log(doc)
-                        // const data1 = doc.data();
-                        // console.log(data1)
-                        // $("#hike-title-heading").html(data1.Name)
-                        // $("#main-img").attr("src", data1.imgsrc)
-                        // $("#map-img").attr("src", data1.mapsrc)
-                        // $("#image-caption").html(data1.ImageCaption)
-                        // $("#map-caption").html(data1.MapCaption)
-                        // $("#description-value").html(data1.Description)
-                        // $("#accessibility-value").html(data1.Accessibility)
-                        // $("#location-value").html(data1.location)
-                        // $("#length-value").html(data1.Length)
-                        // $("#difficulty-value").html(data1.difficulty)
-                        // for (i = 0; i < data1.conditions.length; i++) {
-                        //     console.log(i)
-                        //     console.log(data1.conditions[i])
-                        //     $("#conditions-list").append("<li>" + data1.conditions[i] + "</li>")
-
-                        // }
-                        // $("#conditions-list").html("<li>" + data1.conditions[i] +  "</li>")
-                    }
-                )
-            // })
-        };
-
-        hikeQuery()
-    </script>
     <script src="scripts/eventsearch.js"></script>
 </body>
 
 </html>
+

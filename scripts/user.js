@@ -11,6 +11,7 @@ const gender = $('#profileGender');
 const joined = $('#profileJoined');
 const hikes = $('#profileHikes');
 const rep = $('#profileRep');
+const repBadge = $('#badge');
 const bio = $('#profileBio');
 
 // Firebase Authorization
@@ -39,7 +40,7 @@ addRepButton.addEventListener('click', addRep)
 
 // Functions TODO: Remove console logs
 /**
- *  Load the user's data to the profile page.
+ * Load the user's data to the profile page.
  * @param loggedUserData
  * @param targetUserData
  */
@@ -52,10 +53,26 @@ function loadUserProfile(loggedUserData, targetUserData) {
     joined.text(targetUserData.joined);
     hikes.text(targetUserData.hikes);
     rep.text(targetUserData.rep);
+    addBadge(targetUserData);
     bio.text(targetUserData.bio);
     bio.attr('style', "color: black;")
     addTags(targetUserData);
     emptyLinks(targetUserData);
+}
+
+/**
+ * Add the user badge image to their profile.
+ * @param user
+ */
+function addBadge(user) {
+    if (user.rep < 10)
+        repBadge.attr('src', './images/Badge_Green.png');
+    else if (user.rep >= 10 && user.rep < 50)
+        repBadge.attr('src', './images/Badge_Bronze.png');
+    else if (user.rep >= 50 && user.rep < 100)
+        repBadge.attr('src', './images/Badge_Silver.png');
+    else if (user.rep >= 100)
+        repBadge.attr('src', './images/Badge_Gold.png');
 }
 
 /**
@@ -132,4 +149,4 @@ function addRep() {
             })
         }
     });
-}
+} // TODO: Make rep a toggle, rather than just 1 permanent increase.

@@ -6,6 +6,7 @@ const joined = $('#profileJoined');
 const hikes = $('#profileHikes');
 const rep = $('#profileRep');
 const bio = $('#profileBio');
+const repBadge = $('#badge')
 
 // Firebase Authorization
 firebase.auth().onAuthStateChanged(user => {
@@ -29,11 +30,23 @@ function loadUserProfile(user) {
     gender.text(user.gender);
     joined.text(user.joined);
     hikes.text(user.hikes);
+    addBadge(user);
     rep.text(user.rep);
     bio.text(user.bio);
     bio.attr('style', "color: black;")
     addTags(user);
     emptyLinks(user);
+}
+
+function addBadge(user) {
+    if (user.rep < 10)
+        repBadge.attr('src', './images/Badge_Green.png');
+    else if (user.rep >= 10 && user.rep < 50)
+        repBadge.attr('src', './images/Badge_Bronze.png');
+    else if (user.rep >= 50 && user.rep < 100)
+        repBadge.attr('src', './images/Badge_Silver.png');
+    else if (user.rep >= 100)
+        repBadge.attr('src', './images/Badge_Gold.png');
 }
 
 /**
