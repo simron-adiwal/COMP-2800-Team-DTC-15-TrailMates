@@ -16,19 +16,13 @@ firebase.auth().onAuthStateChanged(user => {
 
 /** Read firebase and add friends into the section.  */
 function loadUserFriends(user) {
-    console.log(user.friendslist)
-
     let friendList = user.friendslist;
     friendList.forEach((friend) => {
         console.log(friend);
         let currentFriend = friend;
         db.collection("users").doc(friend).get().then(function (frienduser) {
             let frienddata = frienduser.data();
-            console.log(frienddata.name.toLowerCase());
-            console.log(searchURLParam);
             if (frienddata.name.toLowerCase().includes(searchURLParam)) {
-
-                console.log(`this is ${frienddata.name}`);
                 $("#friend").append('<a href="profile.html" class="profile-anchor"><div class="contact-card"> <img src="https://randomuser.me/api/portraits/thumb/men/45.jpg" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div>')
             }
         })
