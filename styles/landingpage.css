@@ -33,6 +33,7 @@ body{
     max-width: 500px;
     align-self: center;
     justify-self: center;
+    margin-bottom: 75px;
 }
 
 #search-hikes {
