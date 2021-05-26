@@ -28,6 +28,10 @@ const users = db.collection('users')
 //     })
 // }
 
+/**
+ * Print relevant user cards.
+ * @param user
+ */
 function printUsers(user) {
     $("#friend").append('<a class="profile-anchor"><div class="contact-card"> <img src="https://randomuser.me/api/portraits/thumb/men/45.jpg" alt="User Image Here" class="user-image"><h5 class="user-name"></h5></div> </a>')
     let friends = document.getElementsByClassName("profile-anchor");
