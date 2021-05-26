@@ -1,3 +1,8 @@
+const queryString = window.location.search
+const urlParams = new URLSearchParams(queryString);
+const searchURLParam = urlParams.get('search').toLowerCase()
+
+
 /** Firebase user athentication.  */
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -11,17 +16,18 @@ firebase.auth().onAuthStateChanged(user => {
 
 /** Read firebase and add friends into the section.  */
 function loadUserFriends(user) {
-    console.log(user.friendslist)
     let friendList = user.friendslist;
     friendList.forEach((friend) => {
         let currentFriend = friend;
         db.collection("users").doc(friend).get().then(function (frienduser) {
-            let frienddata = frienduser.data();
-            console.log(frienddata.name);
-            $("#friend").append('<a class="profile-anchor"><div class="contact-card"> <img src="https://randomuser.me/api/portraits/thumb/men/45.jpg" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div> </a>')
-            let friends = document.getElementsByClassName("profile-anchor")
+            if (frienduser.data().name.includes(searchURLParam))
+            {
+                let frienddata = frienduser.data();
+                $("#friend").append('<a class="profile-anchor"><div class="contact-card"> <img src="https://randomuser.me/api/portraits/thumb/men/45.jpg" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div> </a>')
+                let friends = document.getElementsByClassName("profile-anchor")
     
-            friends[friends.length - 1].setAttribute("href","user.html?userid=" + currentFriend);
+                friends[friends.length - 1].setAttribute("href","user.html?userid=" + currentFriend);
+            }
         });
     });
 }
@@ -84,3 +90,4 @@ function getFriend() {
        // });
    // });
 //}
+

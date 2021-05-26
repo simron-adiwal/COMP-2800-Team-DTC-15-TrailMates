@@ -67,6 +67,7 @@
                 //------------------------------------------------------------------------------------------
                 var user = authResult.user;
                 if (authResult.additionalUserInfo.isNewUser) {         //if new user
+                    let newId = user.uid;
                     db.collection("users").doc(user.uid).set({         //write to firestore
                         name: user.displayName,                    //"users" collection
                         email: user.email,                          //with authenticated user's ID (user.uid)
@@ -80,7 +81,8 @@
                         linkFacebook: "",
                         linkTwitter: "",
                         linkInstagram: "",
-                        linkSnapchat: ""
+                        linkSnapchat: "",
+                        id: newId
                     }).then(function () {
                         console.log("New user added to firestore");
                         window.location.assign("landingpage.html");       //re-direct to main.html after signup
