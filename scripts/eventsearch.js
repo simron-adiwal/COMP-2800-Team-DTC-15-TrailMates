@@ -48,18 +48,3 @@ function printEvents(event) {
         setTimeout(eventCardLoad, 3500)
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

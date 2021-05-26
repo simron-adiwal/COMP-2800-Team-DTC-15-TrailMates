@@ -1,3 +1,4 @@
+// Set Bootstrap carousel auto slide off
 $('.carousel').carousel({
     interval: false
 })
@@ -8,15 +9,11 @@ const urlParams = new URLSearchParams(queryString);
 const searchURLParam = urlParams.get('docid')
 console.log(searchURLParam)
 
-
+/**
+ * Reads from DB and populates page HTML according to url parameter
+ */
 function hikeQuery() {
-    // firebase.auth().onAuthStateChanged(function (user) {
-    // console.log(db.collection('hikeDetails').doc('d').collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P'))
-
     db.collection('hikeDetails').doc(searchURLParam)
-    // db.collection('hikeDetails').doc('Kennedy Falls')
-
-        // .collection('Garibaldi').doc('b9QOjnJUIfp70Mm7XT4P')
         .get()
         .then(
             doc => {
@@ -38,9 +35,7 @@ function hikeQuery() {
                     $("#conditions-list").append("<li>" + data1.conditions[i] + "</li>")
 
                 }
-                // $("#conditions-list").html("<li>" + data1.conditions[i] +  "</li>")
             }
         )
-    // })
 };
 hikeQuery()
