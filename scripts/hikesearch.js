@@ -20,9 +20,7 @@ searchHikes()
 function searchHikes() {
     events.get().then((eventQuery) => {
         eventQuery.forEach((document) => {
-            console.log(document.data().Name)
             if (document.data().Name.toLowerCase().includes(searchURLParam)) {
-
                 printEvents(document)
             }
             /**
@@ -40,7 +38,6 @@ function searchHikes() {
                             .then(
                                 doc => {
                                     const data1 = doc.data();
-                                    console.log(data1)
                                     $("#event-title-heading").html(data1.EventName)
                                     $("#start-time").html(data1.Start)
                                     $("#public-or-private").html(data1.EventType + " Event")
