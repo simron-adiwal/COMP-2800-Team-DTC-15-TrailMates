@@ -1,7 +1,5 @@
 // Set Bootstrap carousel auto slide off
-$('.carousel').carousel({
-    interval: false
-})
+
 
 // URL search param
 const queryString = window.location.search
@@ -21,6 +19,8 @@ function searchHikes() {
     events.get().then((eventQuery) => {
         console.log("Got Events")
         eventQuery.forEach((document) => {
+            console.log(document.data().Name);
+            console.log(searchURLParam);
             if (document.data().Name.toLowerCase().includes(searchURLParam)) {
                 printEvents(document)
             }
