@@ -47,4 +47,11 @@ body{
     border-radius: 100px;
 }
 
+.twitter-timeline {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    width: 80vw;
+    max-width: 600px;
+}
 
