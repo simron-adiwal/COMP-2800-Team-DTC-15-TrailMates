@@ -4,13 +4,7 @@
 }
 
 .card {
-    /* color: red; */
-    /* background-image: url(https://firebasestorage.googleapis.com/v0/b/trailmates-657f0.appspot.com/o/Garibaldi%2FGaribaldi%2FGaribaldiLake-PanoramaRidge.jpeg?alt=media&token=58476a8d-c68c-4fd7-9242-3328c860a14a);  */
-    /* background-size: cover;  */
-    /* background-blend-mode: lighten;  */
-    /* opacity: 50%; */
-    margin: auto;
-    margin-top: 5%;
+    margin: 5% auto 0 auto;
     width: 90vw;
     height: 25vh;
 }
@@ -27,65 +21,45 @@
     opacity: 0.50;
 }
 
-
 .card-title.hikeName {
     position: relative;
-    color: black;  
-    /* font-size: 14rem; */
+    color: black;
     line-height: 0.9;
     text-align: left;
 }
-
-
-
 
 .card-body  p {
     position: relative;
-    color: black;  
-    /* font-size: 14rem; */
+    color: black;
     line-height: 0.9;
     text-align: left;
 }
-
-
 
 .a-card {
     position: relative;
-    color: black;  
-    /* font-size: 14rem; */
+    color: black;
     line-height: 0.9;
     text-align: left;
 }
 
-
-
 .hikeName {
-    /* right: 35%; */
     font-size: 1.3em;
 }
 
 .difficulty {
     font-size: 0.8em;
-    /* right: 10px */
 }
 
 .length {
     font-size: 0.8em;
 }
 
-
 .tunnel-bluffs::before {
     background-image: url('https://images.dailyhive.com/20200731115008/Tunnel-Bluffs-view.jpg');
 }
 
-
 .hikeDetails {
-    /* display: flex; */
-    /* justify-content: right; */
-    /* margin-left: 200px; */
-    /* margin-top: 70px; */
     text-align: right;
-    left: 10px;
     color: rgb(217, 255, 0);
     position: absolute;
     bottom: 0;
@@ -100,6 +74,5 @@
     bottom: 0;
     right: 0;
     margin: 3%;
-    /* bottom: 30px; */
-    /* right: 25px; */
 }
+
