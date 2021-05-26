@@ -9,7 +9,7 @@
         href="./images/trailmates_favicon.png" />
     <!-- Bootstrap CSS -->
 
-    <title>Search Events</title>
+    <title>Search User</title>
 </head>
 
 <!-- Bootstrap Scripts-->
@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Our Scripts -->
 <script src="scripts/index.js"></script>
-<script src="scripts/hikedetail.js"></script>
 <link rel="stylesheet" href="./styles/custom.css">
 <link rel="stylesheet" href="./styles/hikedetail.css">
 <!-- jQuery CDN -->
@@ -29,7 +28,7 @@
     crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./styles/hikesearch.css">
 <link rel="stylesheet" href="./styles/custom.css">
-<link rel="stylesheet" href="./styles/eventsearch.css">
+<link rel="stylesheet" href="./styles/mytrailmates.css">
 
 <style>
     #hikeCard {
@@ -46,7 +45,7 @@
         <a href="mytrailmates.html">My TrailMates</a>
         <a href="eventsearch.html">Search Events</a>
         <a href="create_event.html">Create an Event</a>
-        <a href="#">Find new TrailMates</a>
+        <a href="usersearch.html">Find new TrailMates</a>
         <a href="aboutus.html">About Us</a>
         <a href="hikesearch.html">Search Hikes</a>
         <a href="login.html">Sign out</a>
@@ -63,37 +62,14 @@
 
     <div class="search-container">
         <form>
+            <label for="search-input"></label>
         <input id="search-input" type="text"  name="search">
         <button id="search-button" type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
 
-
-
-    <!-- <div class="card" style="width: 18rem;">
-            <div class="card-body card-background-img">
-                <h5 class="card-title eventName"> <strong> June Hike with Friends</strong></h5>
-                <p class="card-text difficulty"><strong>Difficulty: 4/5</strong> </p>
-                <a href="#" class="card-link length a-card"><strong>Length: 8km</strong> </a>
-                <strong> <a class="card-link hikeDetails a-card" href="hikedetail.html">Event Details</a></strong>
-
-            </div>
-    </div>
-
-
-    <div class="card" style="width: 18rem;">
-        <div class="card-body card-background-img tunnel-bluffs">
-            <h5 class="card-title hikeName"> <strong> Tunnel Bluffs</strong></h5>
-            <p class="card-text difficulty"><strong>Difficulty: 3.5/5 </strong>  </p>
-            <a href="#" class="card-link length a-card"><strong>Length: 11.5km </strong></a>
-            <strong> <a class="card-link hikeDetails a-card" href="hikedetail.html">Event Details</a></strong>
-
-        </div>
-    </div> -->
-
-
-
-
+    <section id="friend">
+    </section>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -109,16 +85,15 @@
 
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
     <script src="scripts/team-15-api-key.js"></script>
 
-    <script src="scripts/eventsearch.js"></script>
+    <script src="scripts/usersearch.js"></script>
 </body>
 
 </html>
-
