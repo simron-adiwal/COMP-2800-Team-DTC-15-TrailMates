@@ -29,7 +29,7 @@ function hikeQuery() {
                 $("#location-value").html(data1.location)
                 $("#length-value").html(data1.Length)
                 $("#difficulty-value").html(data1.difficulty)
-                // $('head').append('<meta name="twitter:title" content="pagetitlehere">');
+                // $('head').append('');
                 // $('head').append('<meta name="twitter:image" content="imgurlhere">');
                 // $('head').append('<meta name="twitter:image:alt" content="imgalthere">');
                 // $("[name='twitter:title']").attr('content', data1.Name);
