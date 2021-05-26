@@ -16,20 +16,19 @@ firebase.auth().onAuthStateChanged(user => {
 
 /** Read firebase and add friends into the section.  */
 function loadUserFriends(user) {
+    console.log(user.friendslist)
+
     let friendList = user.friendslist;
     friendList.forEach((friend) => {
         let currentFriend = friend;
         db.collection("users").doc(friend).get().then(function (frienduser) {
-            if (frienduser.data().name.includes(searchURLParam))
-            {
-                let frienddata = frienduser.data();
-                $("#friend").append('<a class="profile-anchor"><div class="contact-card"> <img src="https://randomuser.me/api/portraits/thumb/men/45.jpg" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div> </a>')
-                let friends = document.getElementsByClassName("profile-anchor")
-    
-                friends[friends.length - 1].setAttribute("href","user.html?userid=" + currentFriend);
+            let frienddata = frienduser.data();
+            if (frienddata.name.toLowerCase().includes(searchURLParam.toLowerCase())) {
+                console.log(`this is ${frienddata.name}`);
+                $("#friend").append('<a href="profile.html" class="profile-anchor"><div class="contact-card"> <img src="https://randomuser.me/api/portraits/thumb/men/45.jpg" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div>')
             }
-        });
-    });
+        })
+    })
 }
 
 
@@ -62,16 +61,20 @@ names.appendChild(t);
 
 
 /** Initialize search bar. */
-function getFriend() {
-    document.getElementById("submit").addEventListener('click', function () {
-            let friend = document.getElementById("search").value;
-            console.log(friend);
-    
-            db.collection("users").doc(friend).get().then(function (friendUser) {
-                let friendData = friendUser.data();
-                console.log(friendData.name);
-        })
-    })
+function getFriend(){
+  document.getElementById("submit").addEventListener('click', function () {
+      var fri = document.getElementById("search").value;
+      console.log(fri);
+
+      db.collection("users").doc(friend).get().then
+      if (fri in db.collection("users").doc(friend) ) {
+        location.href="profile.html";
+      } else {console.log("No data")};
+
+      //db.collection("users").doc(friend).get().then(function (frienduser) {
+           //var frienddata = frienduser.data();
+           //console.log(frienddata.name);
+  })
 }
 
 
@@ -90,4 +93,3 @@ function getFriend() {
        // });
    // });
 //}
-
