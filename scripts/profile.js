@@ -109,8 +109,6 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 
-
-
 function randomBackground(user) {
     // if DB field "picture" exists, load that picture. else randomly get a picture url, write it to the DB with a newly created "picture" field and then load that picture
     // db.collection("users").doc(user.uid).get().then(function (user) {
