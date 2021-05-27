@@ -115,10 +115,6 @@ function randomBackground(user) {
     // if DB field "picture" exists, load that picture. else randomly get a picture url, write it to the DB with a newly created "picture" field and then load that picture
     // db.collection("users").doc(user.uid).get().then(function (user) {
     let apple = user.picture;
-    console.log(typeof(apple));
-    console.log(apple);
-
-
     if (typeof(apple) == "string") {
         document.getElementById("avatar").setAttribute("src", apple);
     } else {
@@ -127,19 +123,11 @@ function randomBackground(user) {
             "https://firebasestorage.googleapis.com/v0/b/trailmates-657f0.appspot.com/o/purple_avatar.png?alt=media&token=40fd43e2-76ca-49fb-a836-54042004925f",
             "https://firebasestorage.googleapis.com/v0/b/trailmates-657f0.appspot.com/o/blue_avatar.png?alt=media&token=1a373968-2aa8-4ae9-a220-44c1b583e2e4"];
         let index = Math.floor(Math.random() * list.length);
-        console.log(index);
-        console.log(list[index]);
-        console.log(user.id)
         db.collection("users").doc(user.id).set(
             {picture: list[index]},   {merge: true}
-
-
-        ).then(
-        console.log(user.name),
-        console.log(user.email),
-        )
+        ).then()
         document.getElementById("avatar").setAttribute("src", list[index]);
     }
-    };
+}
 
 // window.onload = randomBackground;

@@ -27,6 +27,8 @@ h3 {
 
 .user-image {
   border-radius: 50%;
+  max-width: 60px;
+  max-height: 60px;
 }
 
 .user-name {

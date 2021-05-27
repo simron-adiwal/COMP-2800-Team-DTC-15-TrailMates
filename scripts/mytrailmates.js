@@ -17,15 +17,21 @@ firebase.auth().onAuthStateChanged(user => {
 /** Read firebase and add friends into the section.  */
 function loadUserFriends(user) {
     let friendList = user.friendslist;
+    let userImage = user.picture;
     friendList.forEach((friend) => {
         let currentFriend = friend;
         db.collection("users").doc(friend).get().then(function (frienduser) {
-            let frienddata = frienduser.data();
-            if (frienddata.name.toLowerCase().includes(searchURLParam)) {
-                $("#friend").append('<a href="user.html" class="profile-anchor"><div class="contact-card"> <img src="" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div>')
+            if (frienduser.data().name.includes(searchURLParam))
+            {
+                let frienddata = frienduser.data();
+                $("#friend").append('<a class="profile-anchor"><div class="contact-card"> <img src="" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div> </a>')
+                let picture = document.getElementsByClassName("user-image")
+                let friends = document.getElementsByClassName("profile-anchor")
+                picture[picture.length - 1].setAttribute("src", userImage);
+                friends[friends.length - 1].setAttribute("href","user.html?userid=" + currentFriend);
             }
-        })
-    })
+        });
+    });
 }
 
 
