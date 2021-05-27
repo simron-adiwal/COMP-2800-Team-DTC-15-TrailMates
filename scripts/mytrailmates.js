@@ -23,7 +23,7 @@ function loadUserFriends(user) {
             if (frienduser.data().name.includes(searchURLParam))
             {
                 let frienddata = frienduser.data();
-                $("#friend").append('<a class="profile-anchor"><div class="contact-card"> <img src="https://randomuser.me/api/portraits/thumb/men/45.jpg" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div> </a>')
+                $("#friend").append('<a class="profile-anchor"><div class="contact-card"> <img src="" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div> </a>')
                 let friends = document.getElementsByClassName("profile-anchor")
     
                 friends[friends.length - 1].setAttribute("href","user.html?userid=" + currentFriend);
