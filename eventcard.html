@@ -20,15 +20,14 @@
     <!-- Side Nav -->
     <div id="mySidenav" class="sidenav">
         <a href="profile.html">Profile</a>
-        <a href="mytrailmates.html">My TrailMates</a>
+        <a href="mytrailmates.html?friends=">My TrailMates</a>
         <a href="eventsearch.html">Search Events</a>
         <a href="create_event.html">Create an Event</a>
         <a href="usersearch.html">Find new TrailMates</a>
         <a href="aboutus.html">About Us</a>
         <a href="hikesearch.html">Search Hikes</a>
-        <a href="login.html">Sign out</a>
+        <a id="sign-out-user" style="cursor: pointer;" href="login.html">Sign out</a>
     </div>
-
     <header>
         <p><span id="menu-button" onclick="openClose()"> &#9776; </span></p>
         <div style="text-align: center">
@@ -68,6 +67,7 @@
 <script src="scripts/index.js"></script>
 <script src="scripts/hikedetail.js"></script>
 <script src="scripts/eventcard.js"></script>
+<script src="scripts/loggedStatus.js"></script>
 <!-- jQuery CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>

@@ -20,9 +20,10 @@
 <!-- Side Nav -->
 <div id="mySidenav" class="sidenav">
   <a href="profile.html">Profile</a>
-  <a href="mytrailmates.html">My TrailMates</a>
-  <a href="create_event.html">Create Event</a>
-  <a href="#">Find new TrailMates</a>
+  <a href="mytrailmates.html?friends=">My TrailMates</a>
+  <a href="eventsearch.html">Search Events</a>
+  <a href="create_event.html">Create an Event</a>
+  <a href="usersearch.html">Find new TrailMates</a>
   <a href="aboutus.html">About Us</a>
   <a href="hikesearch.html">Search Hikes</a>
   <a id="sign-out-user" style="cursor: pointer;" href="login.html">Sign out</a>
@@ -40,11 +41,6 @@
 <main>
   <form>
     <h3 id="edit-profile-header">Edit Profile</h3>
-    <!-- Upload an Avatar Image -->
-    <div class="profilePic">
-      <h6 class="form-header"><label for="profilePicUpload">Upload a Profile Picture</label></h6>
-      <input id="profilePicUpload" type="file" name="profilePicUpload-form">
-    </div><br>
     <!-- Age and Gender -->
     <h6 class="form-header"><label for="age">Age</label></h6>
     <input class="text-box" id="age" type="number" min="13" max="100" name="name-form">
@@ -72,16 +68,12 @@
     </div><br>
     <!-- User Tags -->
     <div class="usertags">
-      <h6 class="form-header"><label for="tag">Tags</label></h6>
+      <h6 class="form-header"><label for="add-tags">Tags</label></h6>
       <input type="button" id="add-tags" value="+">
     </div><br>
     <!-- Bio -->
     <h6 class="form-header"><label for="bio">Bio</label></h6>
     <textarea id="bio" rows="5" name="bio-form"></textarea>
-    <br>
-    <!-- User Pictures -->
-    <h6 class="form-header"><label for="other-pics">Other pictures</label></h6>
-    <input id="other-pics" type="file" name="other-pics-form">
     <br>
     <!-- Submit Form -->
     <input type="button" id="submit-profile" name="submit-profile" value="Finish Editing">
