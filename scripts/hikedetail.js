@@ -45,4 +45,10 @@ function hikeQuery() {
         )
 }
 
+function toCreate() {
+    window.location.href = "create_event.html";
+}
+
+document.getElementById('toCreateEvent').addEventListener('click', toCreate);
+
 hikeQuery()
