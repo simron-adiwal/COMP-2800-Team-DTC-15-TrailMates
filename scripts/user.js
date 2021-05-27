@@ -25,7 +25,7 @@ firebase.auth().onAuthStateChanged(user => {
             db.collection("users").doc(otherUser).get().then(function(user) {
                 targetUserData = user.data();
                 console.log(targetUserData);
-                loadUserProfile(loggedUserData, targetUserData);
+                loadUserProfile(targetUserData);
             });
         });
     }
@@ -44,7 +44,7 @@ addRepButton.addEventListener('click', addRep)
  * @param loggedUserData
  * @param targetUserData
  */
-function loadUserProfile(loggedUserData, targetUserData) {
+function loadUserProfile(targetUserData) {
     console.log(targetUserData);
     name.text(targetUserData.name);
     name.attr('style', 'color: black;')
@@ -137,6 +137,14 @@ function addRep() {
                 db.collection("users").doc(otherUser).get().then(function(user) {
                     let targetUserData = user.data();
                     let newRep = targetUserData.rep + 1;
+                    if (!(userData.hasRepped)) {
+                        db.collection("users").doc(otherUser).update({
+                            rep: newRep
+                        });
+                        db.collection("users").doc(loggedUser).update({
+                            hasRepped: firebase.firestore.FieldValue.arrayUnion(otherUser)
+                        });
+                    }
                     if (!(userData.hasRepped.includes(otherUser))) {
                         db.collection("users").doc(otherUser).update({
                             rep: newRep
@@ -145,12 +153,16 @@ function addRep() {
                             hasRepped: firebase.firestore.FieldValue.arrayUnion(otherUser)
                         });
                     }
+                    setTimeout(reload, 500);
                 });
             })
         }
     });
 }
 
+function reload() {
+    location.reload();
+}
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
