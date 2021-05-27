@@ -33,10 +33,10 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="profile.html">Profile</a>
-        <a href="mytrailmates.html">My TrailMates</a>
+        <a href="mytrailmates.html?friends=">My TrailMates</a>
         <a href="eventsearch.html">Search Events</a>
         <a href="create_event.html">Create an Event</a>
-        <a href="usersearch.html">Find new TrailMates</a>
+        <a href="usersearch.html?search=">Find new TrailMates</a>
         <a href="aboutus.html">About Us</a>
         <a href="hikesearch.html">Search Hikes</a>
         <a id="sign-out-user" style="cursor: pointer;" href="login.html">Sign out</a>
@@ -54,9 +54,11 @@
     <div class="wrap">
         <h3>My TrailMates</h3>
         <div class='searchbar'>
+            <form>
             <label for="search"></label>
-            <input id="search" type="text" placeholder="Search">
+            <input id="search" type="text" placeholder="Search" name="friends">
             <button type="submit" id='submit'><i class="fa fa-search"></i></button>
+            </form>
         </div>
     </div>
 

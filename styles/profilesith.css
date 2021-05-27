@@ -46,6 +46,10 @@ main {
     align-self: center;
 }
 
+h3, h4, h5, h6, p, span {
+    color: #eeeeee;
+}
+
 .basicInfo:nth-child(n){
     justify-content: center;
     align-content: center;
@@ -97,7 +101,7 @@ main {
 }
 
 .socials a {
-    color: #a4a4a4;
+    color: #613838;
 }
 
 .totalHikes {
@@ -131,16 +135,18 @@ main {
 
 .tags .tagCard {
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid #613838;
     border-radius: 20px;
-    box-shadow: 0 3px 3px #a4a4a4;
+    box-shadow: 0 3px 3px #ff2525;
+    background-color: #1d0101;
     padding: 6px 10px 1px 8px;
     margin-bottom: 1vw;
+    color: #dddddd;
 }
 
 .tags .tagCard:active, .tags .tagCard:hover {
     border: none;
-    background-color: #6abf40;
+    background-color: #de0000;
     color: white;
     cursor: pointer;
 }
@@ -153,7 +159,7 @@ main {
     min-height: 100px;
     display: flex;
     padding: 15px 15px 10px 15px;
-    background-color: #cbdcbd;
+    background-color: #613838;
     border-radius: 15px;
     margin: 10px 5vw 0 5vw;
 }
@@ -236,7 +242,7 @@ main {
 #add-trailmate, #give-rep {
     border: 1px solid black;
     border-radius: 25px;
-    background-color: #ffffff;
+    background-color: #613838;
     padding: 0 2vw;
     margin-right: 5px;
     font-size: 85%;
@@ -244,7 +250,7 @@ main {
 
 #add-trailmate:active, #add-trailmate:hover, #give-rep:active, #give-rep:hover {
     border: none;
-    background-color: #6abf40;
+    background-color: #de0000;
     color: white;
 }
 
@@ -256,7 +262,7 @@ main {
 
 #extra-actions:active, #extra-actions:hover {
     border: none;
-    background-color: #6abf40;
+    background-color: #de0000;
     color: white;
 }
 
@@ -271,7 +277,7 @@ main {
 
 #edit-profile-button:active, #edit-profile-button:hover {
     border: none;
-    background-color: #6abf40;
+    background-color: #de0000;
     color: white;
 }
 

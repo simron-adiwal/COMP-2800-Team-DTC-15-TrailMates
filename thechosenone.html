@@ -3,7 +3,7 @@
 <head>
   <!-- Required Meta Tags -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">\
   <!-- Page Title -->
   <title>TrailMates</title>
   <!-- Favicon -->
@@ -12,8 +12,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <!-- Custom CSS Link -->
-  <link rel="stylesheet" href="./styles/custom.css">
-  <link rel="stylesheet" href="./styles/profile.css">
+  <link rel="stylesheet" href="./styles/customsith.css">
+  <link rel="stylesheet" href="./styles/profilesith.css">
 </head>
 <body>
 <!-- Side Nav -->
@@ -36,36 +36,35 @@
     </a>
   </div>
 </header>
-
 <!-- Content -->
 <main>
   <div class="profileInfo">
     <!-- Basic Profile Info -->
     <div class="imageName">
-      <img id="avatar" alt="profileImage" src="https://randomuser.me/api/portraits/men/45.jpg">
-      <h3 id="profileName" style="color: white;">Name</h3>
+      <img id="avatar" alt="profileImage" src="./images/anakin.jpg">
+      <h3 id="profileName" style=>Anakin Skywalker</h3>
     </div>
     <div class="basicInfo">
       <div class="repBadge">
-        <img id="badge" alt="repBadge" src="https://via.placeholder.com/40">
+        <img id="badge" alt="repBadge" src="./images/sithempire.png">
         <h6><span id="profileRep">90</span> Rep</h6>
       </div>
       <div class="totalHikes">
-        <h3 id="profileHikes">50</h3>
-        <span>Total Hikes</span>
+        <h3 id="profileHikes">66</h3>
+        <span>Orders Executed</span>
       </div>
       <div class="age-gender">
         <p>
-          Age: <span class="age" id="profileAge">35</span><br>
-          Gender: <span class="gender" id="profileGender">M</span><br>
-          Joined: <span class="user-since" id="profileJoined">January 2020</span>
+          Age: <span class="age" id="profileAge">26</span><br>
+          Affiliation: <span class="gender" id="profileGender">Sith</span><br>
+          Joined: <span class="user-since" id="profileJoined">19 BBY</span>
         </p>
       </div>
     </div>
   </div>
   <!-- Utility Buttons and Social Media -->
   <div class="utility">
-    <button id="add-trailmate">Add TrailMate</button>
+    <button id="add-trailmate">Add ForceMate</button>
     <button id="give-rep">Rep+</button>
     <div class="socials">
       <a id="profileFacebook" href="https://www.facebook.com"><span class="iconify"  data-icon="entypo-social:facebook" data-inline="false"></span></a>
@@ -76,34 +75,60 @@
     <div class="dropdown">
       <button class="btn dropdown-toggle" type="button" id="extra-actions" data-bs-toggle="dropdown">...</button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Report User</a></li>
+        <li><a class="dropdown-item" href="#">Report to the Council</a></li>
       </ul>
     </div>
   </div>
   <!-- User Tags -->
   <div class="tags">
+    <div class="tagCard" onclick="playAudio('sounds/frommypointofview.mp3')">
+      <h6>Thinks Jedi are Evil</h6>
+    </div>
+    <div class="tagCard">
+      <h6>Absentee Parent</h6>
+    </div>
+    <div class="tagCard" onclick="playAudio('sounds/i-dont-like-sand.mp3')">
+      <h6>Hates Sand</h6>
+    </div>
+    <div class="tagCard" onclick="playAudio('sounds/do-it.mp3')">
+      <h6>Did it</h6>
+    </div>
+    <div class="tagCard">
+      <h6>Asphyxiation Enthusiast</h6>
+    </div>
+    <div class="tagCard" onclick="playAudio('sounds/now-this-is-pod-racing.mp3')">
+      <h6>Loves Podracing</h6>
+    </div>
   </div>
   <!-- User Bio -->
   <div class="bio">
-    <p id="profileBio" style="color: #cbdcbd;">Nothing here :(</p>
+    <p id="profileBio">You underestimate the power of the Dark Side. If you will not fight, then you will meet your destiny.<br></p>
+  </div>
+  <!-- Additional User Images -->
+  <div class="profileImages">
+    <a class ="" href="https://www.google.ca"><img src="https://via.placeholder.com/500x1000" class="img-thumbnail" alt="User Image" ></a>
+    <img src="https://via.placeholder.com/1000x500" class="img-thumbnail grid-center" alt="User Image" >
+    <img src="https://via.placeholder.com/500" class="img-thumbnail" alt="User Image" >
+    <img src="https://via.placeholder.com/500" class="img-thumbnail" alt="User Image" >
   </div>
 </main>
 </body>
+
 <!-- Firebase -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-<script src="scripts/team-15-api-key.js"></script>
 <!-- Bootstrap Scripts-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
 <!-- Iconify -->
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<script src="scripts/team-15-api-key.js"></script>
 <!-- Our Scripts -->
 <script src="scripts/index.js"></script>
-<script src="scripts/user.js"></script>
+<script src="scripts/eastereggsounds.js"></script>
 <script src="scripts/loggedStatus.js"></script>
 </html>

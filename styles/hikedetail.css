@@ -1,25 +1,34 @@
 #hike-title-heading {
+    margin-top: 15px;
+    background-color: #cbdcbd;
+    border-radius: 25px;
+    min-width: 200px;
+    max-width: 80vw;
+    padding: 5px;
     display: flex;
     justify-content: center;
+    align-self: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 .carousel-img {
-    height: 30vh;
-    width: 80vw;
+    object-fit: cover;
 }
 
 .info-section {
     display: flex;
+    background-color: #cbdcbd;
+    border-radius: 25px;
     flex-direction: column;
-    margin: auto;
-    margin-top: 10vh;
-    border: solid 1px black;
-    padding: 5px;
+    margin: 20px auto 0 auto;
+    padding: 20px;
     width: 80vw;
 }
+
 .caption-text {
     font-size: 0.7em;
 }
+
 .map-text {
     color: black;
     font-size: 0.9em;

@@ -1,6 +1,6 @@
-const queryString = window.location.search
+const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const searchURLParam = urlParams.get('search').toLowerCase()
+const searchURLParam = urlParams.get('friends').toLowerCase();
 
 
 /** Firebase user athentication.  */
@@ -17,6 +17,7 @@ firebase.auth().onAuthStateChanged(user => {
 /** Read firebase and add friends into the section.  */
 function loadUserFriends(user) {
     let friendList = user.friendslist;
+    let userImage = user.picture;
     friendList.forEach((friend) => {
         let currentFriend = friend;
         db.collection("users").doc(friend).get().then(function (frienduser) {
@@ -24,8 +25,9 @@ function loadUserFriends(user) {
             {
                 let frienddata = frienduser.data();
                 $("#friend").append('<a class="profile-anchor"><div class="contact-card"> <img src="" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div> </a>')
+                let picture = document.getElementsByClassName("user-image")
                 let friends = document.getElementsByClassName("profile-anchor")
-    
+                picture[picture.length - 1].setAttribute("src", userImage);
                 friends[friends.length - 1].setAttribute("href","user.html?userid=" + currentFriend);
             }
         });
@@ -62,16 +64,20 @@ names.appendChild(t);
 
 
 /** Initialize search bar. */
-function getFriend() {
-    document.getElementById("submit").addEventListener('click', function () {
-            let friend = document.getElementById("search").value;
-            console.log(friend);
-    
-            db.collection("users").doc(friend).get().then(function (friendUser) {
-                let friendData = friendUser.data();
-                console.log(friendData.name);
-        })
-    })
+function getFriend(){
+  document.getElementById("submit").addEventListener('click', function () {
+      var fri = document.getElementById("search").value;
+      console.log(fri);
+
+      db.collection("users").doc(friend).get().then
+      if (fri in db.collection("users").doc(friend) ) {
+        location.href="profile.html";
+      } else {console.log("No data")};
+
+      //db.collection("users").doc(friend).get().then(function (frienduser) {
+           //var frienddata = frienduser.data();
+           //console.log(frienddata.name);
+  })
 }
 
 
@@ -90,4 +96,3 @@ function getFriend() {
        // });
    // });
 //}
-
