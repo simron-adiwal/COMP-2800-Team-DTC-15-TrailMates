@@ -22,7 +22,7 @@ function loadUserFriends(user) {
         db.collection("users").doc(friend).get().then(function (frienduser) {
             let frienddata = frienduser.data();
             if (frienddata.name.toLowerCase().includes(searchURLParam)) {
-                $("#friend").append('<a href="profile.html" class="profile-anchor"><div class="contact-card"> <img src="https://randomuser.me/api/portraits/thumb/men/45.jpg" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div>')
+                $("#friend").append('<a href="user.html" class="profile-anchor"><div class="contact-card"> <img src="" alt="User Image Here" class="user-image"><h5 class="user-name">' + String(frienddata.name) + '</h5></div>')
             }
         })
     })
