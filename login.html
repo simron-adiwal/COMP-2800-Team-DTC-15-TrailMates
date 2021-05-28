@@ -10,31 +10,31 @@
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <!-- Optional styles and scripts of your own -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
     <link rel="stylesheet" href="./styles/login.css">
     <link rel="stylesheet" href="./styles/custom.css">
 </head>
 
 <body>
-    <header>
-        <div style="text-align: center">
-            <a href="#">
-                <img alt="Help" id="logo" src="./images/TrailMates-white.png">
-            </a>
-        </div>
-    </header>
-
-    <div id="firebaseui-auth-container"></div>
-    <p class='h2' id="loader">Loading...</p>
-
-    <div class="footer_copyright">
-        <p id="copyright">&#169; Trailmates</p>
+<header>
+    <div style="text-align: center">
+        <a href="#">
+            <img alt="Help" id="logo" src="./images/TrailMates-white.png">
+        </a>
     </div>
+</header>
+
+<div id="firebaseui-auth-container"></div>
+<p class='h2' id="loader">Loading...</p>
+
+<div class="footer_copyright">
+    <p id="copyright">&#169; Trailmates</p>
+</div>
 </body>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
@@ -67,12 +67,25 @@
                 //------------------------------------------------------------------------------------------
                 var user = authResult.user;
                 if (authResult.additionalUserInfo.isNewUser) {         //if new user
+                    let newId = user.uid;
                     db.collection("users").doc(user.uid).set({         //write to firestore
                         name: user.displayName,                    //"users" collection
-                        email: user.email                          //with authenticated user's ID (user.uid)
+                        email: user.email,                          //with authenticated user's ID (user.uid)
+                        age: 18,
+                        bio: "",
+                        friendslist: [],
+                        gender: "Other",
+                        rep: 0,
+                        tags: [],
+                        hikes: 0,
+                        linkFacebook: "",
+                        linkTwitter: "",
+                        linkInstagram: "",
+                        linkSnapchat: "",
+                        id: newId
                     }).then(function () {
                         console.log("New user added to firestore");
-                        window.location.assign("landingpage.html");       //re-direct to main.html after signup
+                        setTimeout(function(){window.location.assign("landingpage.html")}, 1000); //re-direct to main.html after signup
                     })
                         .catch(function (error) {
                             console.log("Error adding new user: " + error);

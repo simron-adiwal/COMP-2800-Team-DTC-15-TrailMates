@@ -24,6 +24,17 @@
     min-width: 300px;
 }
 
+#summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+#review_details_header {
+    align-self: center;
+}
+
 #create-header {
     display: flex;
     justify-content: center;
@@ -52,5 +63,9 @@
 
 #create-button {
     margin-right: 10px;
+}
+
+#publish_event_button {
+    max-width: 100px;
 }
 
